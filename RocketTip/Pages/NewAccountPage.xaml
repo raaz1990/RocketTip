@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RocketTip.Pages.NewAccountPage"
+             Title="About Me">
+    <ScrollView>
+        <Grid RowDefinitions="*,Auto,Auto,*" Padding="30,10">
+            <Image Grid.Row="0" Source="userimage.png" HeightRequest="95" WidthRequest="95" />
+
+            <!-- Title -->
+            <Label Grid.Row="1" 
+               Text="Welcome Ashley 👋" 
+               FontSize="18" 
+               FontAttributes="Bold" 
+               TextColor="Black" 
+               FontFamily="MontserratBold" 
+               LineBreakMode="WordWrap" 
+               HorizontalOptions="FillAndExpand" />
+            
+            <!-- Agreement Text -->
+            <StackLayout HorizontalOptions="Start" Grid.Row="2" Spacing="5" Margin="0,20" Padding="10">
+                <Label Text="Which Role Best Describes You?" 
+                   FontSize="14" 
+                   FontFamily="MontserratRegular"
+                   LineBreakMode="WordWrap" 
+                   HorizontalOptions="FillAndExpand" />
+
+                <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand" Spacing="10">
+                    <CheckBox IsChecked="true" VerticalOptions="Start" />
+                    <Label Text="I am rewarded by tips e.g. wait staff" TextColor="Gray" LineBreakMode="WordWrap" 
+                       HorizontalOptions="FillAndExpand" />
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand" Spacing="10">
+                    <CheckBox VerticalOptions="Start" />
+                    <Label Text="I am the manager of a business with staff who are rewarded with tips" 
+                       TextColor="Gray"
+                       LineBreakMode="WordWrap" 
+                       HorizontalOptions="FillAndExpand" />
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand" Spacing="10">
+                    <CheckBox  VerticalOptions="Center" />
+                    <Label Text="I am a customer who rewards good service with tips" 
+                       TextColor="Gray"
+                       LineBreakMode="WordWrap" 
+                       HorizontalOptions="FillAndExpand" />
+                </StackLayout>
+            </StackLayout>
+
+            <!-- Register Button -->
+            <Button Text="Save" 
+                BackgroundColor="#F83758"
+                TextColor="White" 
+                FontAttributes="Bold" 
+                CornerRadius="5" 
+                HeightRequest="50" 
+                Grid.Row="3"/>
+        </Grid>
+    </ScrollView>
+
+</ContentPage>

@@ -1,7 +1,8 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="RocketTip.MainPage" Shell.NavBarIsVisible="False">
+             x:Class="RocketTip.Pages.LoginPage"
+             Title="LoginPage" Shell.NavBarIsVisible="False">
 
     <ScrollView>
         <Grid RowDefinitions="*,Auto,*" RowSpacing="20" Padding="30,50">
@@ -40,7 +41,13 @@
 
 
                     <!-- Agreement Text -->
-                    <Label Text="Forgot Password?" FontSize="12" TextColor="#F83758" HorizontalOptions="End" />
+                    <HorizontalStackLayout HorizontalOptions="End" Padding="5,10">
+                    <Label Text="Forgot Password?" FontSize="12" TextColor="#F83758"/>
+                    <HorizontalStackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnForgotPasswordTapped"/>
+                    </HorizontalStackLayout.GestureRecognizers>
+
+                    </HorizontalStackLayout>
                 </StackLayout>
             </StackLayout >
             <!-- Register Button -->
@@ -48,9 +55,9 @@
                     BackgroundColor="#F83758"
                     TextColor="White" 
                     FontAttributes="Bold" 
-                    CornerRadius="5" 
+                    CornerRadius="5" Clicked="OnLogin"
                     HeightRequest="50"  Grid.Row="1"/>
-            <StackLayout Grid.Row="2" Spacing="30">
+            <StackLayout Grid.Row="2" Spacing="30" >
                 <!-- OR Continue With -->
                 <Label Text="- OR Continue with -" 
                    FontSize="14" 
@@ -65,18 +72,15 @@
                 </HorizontalStackLayout>
 
                 <!-- Already Have an Account -->
-                <HorizontalStackLayout HorizontalOptions="Center" Spacing="2" VerticalOptions="Center">
-                    <Label VerticalOptions="Center">
-                        <Label.FormattedText>
-                            <FormattedString>
-                                <Span Text="Create an Account " TextColor="Gray"/>
-                                <Span Text=" Sign Up" TextColor="#FF3D58" FontAttributes="Bold"/>
-                            </FormattedString>
-                        </Label.FormattedText>
-                    </Label>
+                <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                    <Label Text="Create an Account " TextColor="Gray" FontFamily="MontserratRegular"/>
+                    <Label Text=" Sign Up" TextColor="#FF3D58" FontFamily="MontserratBold"/>
+                    <HorizontalStackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnSignUpTapped"/>
+                    </HorizontalStackLayout.GestureRecognizers>
+
                 </HorizontalStackLayout>
             </StackLayout>
         </Grid>
     </ScrollView>
-
 </ContentPage>

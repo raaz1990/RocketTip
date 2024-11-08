@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RocketTip.Pages.OnboardingPage"
+             Title="OnboardingPage" BackgroundImageSource="femalebackground.png" Shell.NavBarIsVisible="False">
+    <Grid RowDefinitions="*,Auto">
+        <StackLayout Grid.Row="0"></StackLayout>
+        <StackLayout Grid.Row="1" Spacing="20" Margin="50">
+            <Label Text="Rewarding hard working service staff" FontSize="34"  FontFamily="MontserratBold" TextColor="White" HorizontalTextAlignment="Center"
+HorizontalOptions="Center" /> 
+            <Button Text="Get Started" 
+        BackgroundColor="#F83758"
+        TextColor="White" FontFamily="MontserratBold"
+        CornerRadius="5" 
+        HeightRequest="50" Clicked="Started_Clicked"/>
+        </StackLayout>
+    </Grid>
+</ContentPage>

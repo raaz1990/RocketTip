@@ -3,13 +3,18 @@
     x:Class="RocketTip.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:RocketTip"
+    xmlns:local="clr-namespace:RocketTip" xmlns:pages="clr-namespace:RocketTip.Pages"
     Shell.FlyoutBehavior="Disabled"
     Title="RocketTip">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+   
+    <ShellContent 
+        ContentTemplate="{DataTemplate pages:OnboardingPage}" 
+        Shell.FlyoutBehavior="Disabled" 
+        Shell.FlyoutItemIsVisible="False"/> 
+    <!--<ShellContent 
+        ContentTemplate="{DataTemplate pages:NewAccountPage}" 
+        Shell.FlyoutBehavior="Disabled" 
+        Shell.FlyoutItemIsVisible="False"/>-->
 
 </Shell>

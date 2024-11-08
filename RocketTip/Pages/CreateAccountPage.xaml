@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RocketTip.Pages.CreateAccountPage"
+             Title="CreateAccountPage" Shell.NavBarIsVisible="False">
+    <ScrollView>
+        <VerticalStackLayout Padding="30,20" Spacing="20">
+
+            <!-- Title -->
+            <Label Text="Create an account" FontSize="40" FontAttributes="Bold" TextColor="Black" FontFamily="MontserratBold" />
+            <!-- Username/Email Entry -->
+            <Frame CornerRadius="10"  BorderColor="Transparent" Padding="10" BackgroundColor="#F3F3F3">
+                <Grid ColumnDefinitions="Auto,*">
+                    <Image Grid.Column="0" Source="profile.png" WidthRequest="20" HeightRequest="20" Margin="5,0"/>
+                    <Entry Grid.Column="1" Placeholder="Username or Email" 
+                   BackgroundColor="Transparent" 
+                   TextColor="Black"
+                   PlaceholderColor="Gray"
+                   HorizontalOptions="FillAndExpand" FontFamily="MontserratRegular" />
+                </Grid>
+            </Frame>
+
+            <!-- Password Entry -->
+            <Frame CornerRadius="10" BorderColor="Transparent" Padding="10" BackgroundColor="#F3F3F3">
+                <Grid ColumnDefinitions="Auto,*,Auto">
+                    <Image Grid.Column="0" Source="password.png" WidthRequest="20" HeightRequest="20" Margin="5,0"/>
+                    <Entry Grid.Column="1" Placeholder="Password" 
+                   BackgroundColor="Transparent" 
+                   TextColor="Black"
+                   PlaceholderColor="Gray"
+                   IsPassword="True" FontFamily="MontserratRegular" />
+                    <Image Grid.Column="2" Source="hide.png" WidthRequest="20" HeightRequest="20" Margin="5,0"/>
+                </Grid>
+            </Frame>
+
+            <!-- Confirm Password Entry -->
+            <Frame CornerRadius="10" BorderColor="Transparent" Padding="10" BackgroundColor="#F3F3F3">
+                <Grid ColumnDefinitions="Auto,*,Auto">
+                    <Image Grid.Column="0" Source="password.png" WidthRequest="20" HeightRequest="20" Margin="5,0"/>
+                    <Entry Grid.Column="1" Placeholder="Confirm Password" 
+                   BackgroundColor="Transparent" 
+                   TextColor="Black"
+                   PlaceholderColor="Gray"
+                   IsPassword="True"
+                   HorizontalOptions="FillAndExpand" FontFamily="MontserratRegular"/>
+                    <Image Grid.Column="2" Source="hide.png" WidthRequest="20" HeightRequest="20" Margin="5,0"/>
+                </Grid>
+            </Frame>
+
+            <!-- Agreement Text -->
+            <Label Text="By clicking the Register button, you agree to the public offer" 
+           FontSize="12" TextColor="Gray" HorizontalOptions="Center" FontFamily="MontserratRegular"/>
+
+            <!-- Register Button -->
+            <Button Text="Create Account" 
+            BackgroundColor="#F83758"
+            TextColor="White" 
+            FontAttributes="Bold" 
+            CornerRadius="5" 
+            HeightRequest="50" Clicked="OnCreateAccount" />
+
+            <!-- OR Continue With -->
+            <Label Text="- OR Continue with -" 
+           FontSize="14" 
+           TextColor="Gray" 
+           HorizontalOptions="Center" />
+
+            <!-- Social Media Icons -->
+            <HorizontalStackLayout HorizontalOptions="Center" Spacing="20">
+                <Image Source="google_icon.png" WidthRequest="40" HeightRequest="40"/>
+                <Image Source="apple_icon.png" WidthRequest="40" HeightRequest="40"/>
+                <Image Source="facebook_icon.png" WidthRequest="40" HeightRequest="40"/>
+            </HorizontalStackLayout>
+
+            <!-- Already Have an Account -->
+            <HorizontalStackLayout HorizontalOptions="Center" Spacing="2" VerticalOptions="Center">
+                <Label Text="I Already Have an Account " TextColor="Gray" FontFamily="MontserratRegular"/>
+                <Label Text="Login" TextColor="#FF3D58" FontFamily="MontserratBold"/>                
+                <HorizontalStackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnLoginTapped"/>
+                </HorizontalStackLayout.GestureRecognizers>
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

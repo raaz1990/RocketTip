@@ -1,0 +1,229 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\OTC\\Desktop\\PR\\RocketTip\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{CDB1E18F-8E3A-4B7C-8322-8D02761CA38B}|RocketTip\\RocketTip.csproj|c:\\users\\otc\\desktop\\pr\\rockettip\\rockettip\\pages\\newaccountpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{CDB1E18F-8E3A-4B7C-8322-8D02761CA38B}|RocketTip\\RocketTip.csproj|solutionrelative:rockettip\\pages\\newaccountpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CDB1E18F-8E3A-4B7C-8322-8D02761CA38B}|RocketTip\\RocketTip.csproj|c:\\users\\otc\\desktop\\pr\\rockettip\\rockettip\\pages\\createaccountpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{CDB1E18F-8E3A-4B7C-8322-8D02761CA38B}|RocketTip\\RocketTip.csproj|solutionrelative:rockettip\\pages\\createaccountpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CDB1E18F-8E3A-4B7C-8322-8D02761CA38B}|RocketTip\\RocketTip.csproj|c:\\users\\otc\\desktop\\pr\\rockettip\\rockettip\\pages\\createaccountpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CDB1E18F-8E3A-4B7C-8322-8D02761CA38B}|RocketTip\\RocketTip.csproj|solutionrelative:rockettip\\pages\\createaccountpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CDB1E18F-8E3A-4B7C-8322-8D02761CA38B}|RocketTip\\RocketTip.csproj|c:\\users\\otc\\desktop\\pr\\rockettip\\rockettip\\pages\\loginpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CDB1E18F-8E3A-4B7C-8322-8D02761CA38B}|RocketTip\\RocketTip.csproj|solutionrelative:rockettip\\pages\\loginpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CDB1E18F-8E3A-4B7C-8322-8D02761CA38B}|RocketTip\\RocketTip.csproj|c:\\users\\otc\\desktop\\pr\\rockettip\\rockettip\\pages\\loginpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{CDB1E18F-8E3A-4B7C-8322-8D02761CA38B}|RocketTip\\RocketTip.csproj|solutionrelative:rockettip\\pages\\loginpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CDB1E18F-8E3A-4B7C-8322-8D02761CA38B}|RocketTip\\RocketTip.csproj|c:\\users\\otc\\desktop\\pr\\rockettip\\rockettip\\pages\\forgotpasswordpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{CDB1E18F-8E3A-4B7C-8322-8D02761CA38B}|RocketTip\\RocketTip.csproj|solutionrelative:rockettip\\pages\\forgotpasswordpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CDB1E18F-8E3A-4B7C-8322-8D02761CA38B}|RocketTip\\RocketTip.csproj|c:\\users\\otc\\desktop\\pr\\rockettip\\rockettip\\appshell.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{CDB1E18F-8E3A-4B7C-8322-8D02761CA38B}|RocketTip\\RocketTip.csproj|solutionrelative:rockettip\\appshell.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CDB1E18F-8E3A-4B7C-8322-8D02761CA38B}|RocketTip\\RocketTip.csproj|c:\\users\\otc\\desktop\\pr\\rockettip\\rockettip\\pages\\onboardingpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{CDB1E18F-8E3A-4B7C-8322-8D02761CA38B}|RocketTip\\RocketTip.csproj|solutionrelative:rockettip\\pages\\onboardingpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CDB1E18F-8E3A-4B7C-8322-8D02761CA38B}|RocketTip\\RocketTip.csproj|c:\\users\\otc\\desktop\\pr\\rockettip\\rockettip\\resources\\styles\\styles.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{CDB1E18F-8E3A-4B7C-8322-8D02761CA38B}|RocketTip\\RocketTip.csproj|solutionrelative:rockettip\\resources\\styles\\styles.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CDB1E18F-8E3A-4B7C-8322-8D02761CA38B}|RocketTip\\RocketTip.csproj|c:\\users\\otc\\desktop\\pr\\rockettip\\rockettip\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{CDB1E18F-8E3A-4B7C-8322-8D02761CA38B}|RocketTip\\RocketTip.csproj|solutionrelative:rockettip\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CDB1E18F-8E3A-4B7C-8322-8D02761CA38B}|RocketTip\\RocketTip.csproj|c:\\users\\otc\\desktop\\pr\\rockettip\\rockettip\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CDB1E18F-8E3A-4B7C-8322-8D02761CA38B}|RocketTip\\RocketTip.csproj|solutionrelative:rockettip\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "NewAccountPage.xaml",
+              "DocumentMoniker": "C:\\Users\\OTC\\Desktop\\PR\\RocketTip\\RocketTip\\Pages\\NewAccountPage.xaml",
+              "RelativeDocumentMoniker": "RocketTip\\Pages\\NewAccountPage.xaml",
+              "ToolTip": "C:\\Users\\OTC\\Desktop\\PR\\RocketTip\\RocketTip\\Pages\\NewAccountPage.xaml",
+              "RelativeToolTip": "RocketTip\\Pages\\NewAccountPage.xaml",
+              "ViewState": "AQIAAAcAAAAAAAAAAAAowDMAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-11-08T10:30:15.275Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "LoginPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\OTC\\Desktop\\PR\\RocketTip\\RocketTip\\Pages\\LoginPage.xaml.cs",
+              "RelativeDocumentMoniker": "RocketTip\\Pages\\LoginPage.xaml.cs",
+              "ToolTip": "C:\\Users\\OTC\\Desktop\\PR\\RocketTip\\RocketTip\\Pages\\LoginPage.xaml.cs",
+              "RelativeToolTip": "RocketTip\\Pages\\LoginPage.xaml.cs",
+              "ViewState": "AQIAAAQAAAAAAAAAAAA1wBcAAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-08T10:25:04.106Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CreateAccountPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\OTC\\Desktop\\PR\\RocketTip\\RocketTip\\Pages\\CreateAccountPage.xaml.cs",
+              "RelativeDocumentMoniker": "RocketTip\\Pages\\CreateAccountPage.xaml.cs",
+              "ToolTip": "C:\\Users\\OTC\\Desktop\\PR\\RocketTip\\RocketTip\\Pages\\CreateAccountPage.xaml.cs",
+              "RelativeToolTip": "RocketTip\\Pages\\CreateAccountPage.xaml.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAuwBAAAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-08T10:23:17.49Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CreateAccountPage.xaml",
+              "DocumentMoniker": "C:\\Users\\OTC\\Desktop\\PR\\RocketTip\\RocketTip\\Pages\\CreateAccountPage.xaml",
+              "RelativeDocumentMoniker": "RocketTip\\Pages\\CreateAccountPage.xaml",
+              "ToolTip": "C:\\Users\\OTC\\Desktop\\PR\\RocketTip\\RocketTip\\Pages\\CreateAccountPage.xaml",
+              "RelativeToolTip": "RocketTip\\Pages\\CreateAccountPage.xaml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADsAAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-11-08T10:22:37.855Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "OnboardingPage.xaml",
+              "DocumentMoniker": "C:\\Users\\OTC\\Desktop\\PR\\RocketTip\\RocketTip\\Pages\\OnboardingPage.xaml",
+              "RelativeDocumentMoniker": "RocketTip\\Pages\\OnboardingPage.xaml",
+              "ToolTip": "C:\\Users\\OTC\\Desktop\\PR\\RocketTip\\RocketTip\\Pages\\OnboardingPage.xaml",
+              "RelativeToolTip": "RocketTip\\Pages\\OnboardingPage.xaml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-11-08T09:56:48.49Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ForgotPasswordPage.xaml",
+              "DocumentMoniker": "C:\\Users\\OTC\\Desktop\\PR\\RocketTip\\RocketTip\\Pages\\ForgotPasswordPage.xaml",
+              "RelativeDocumentMoniker": "RocketTip\\Pages\\ForgotPasswordPage.xaml",
+              "ToolTip": "C:\\Users\\OTC\\Desktop\\PR\\RocketTip\\RocketTip\\Pages\\ForgotPasswordPage.xaml",
+              "RelativeToolTip": "RocketTip\\Pages\\ForgotPasswordPage.xaml",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABAAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-11-08T07:40:34.687Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "LoginPage.xaml",
+              "DocumentMoniker": "C:\\Users\\OTC\\Desktop\\PR\\RocketTip\\RocketTip\\Pages\\LoginPage.xaml",
+              "RelativeDocumentMoniker": "RocketTip\\Pages\\LoginPage.xaml",
+              "ToolTip": "C:\\Users\\OTC\\Desktop\\PR\\RocketTip\\RocketTip\\Pages\\LoginPage.xaml",
+              "RelativeToolTip": "RocketTip\\Pages\\LoginPage.xaml",
+              "ViewState": "AQIAAC0AAAAAAAAAAAAAADYAAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-11-08T06:46:46.652Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Styles.xaml",
+              "DocumentMoniker": "C:\\Users\\OTC\\Desktop\\PR\\RocketTip\\RocketTip\\Resources\\Styles\\Styles.xaml",
+              "RelativeDocumentMoniker": "RocketTip\\Resources\\Styles\\Styles.xaml",
+              "ToolTip": "C:\\Users\\OTC\\Desktop\\PR\\RocketTip\\RocketTip\\Resources\\Styles\\Styles.xaml",
+              "RelativeToolTip": "RocketTip\\Resources\\Styles\\Styles.xaml",
+              "ViewState": "AQIAAG8BAAAAAAAAAAAYwHkBAAA+AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-11-08T05:57:08.808Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "App.xaml",
+              "DocumentMoniker": "C:\\Users\\OTC\\Desktop\\PR\\RocketTip\\RocketTip\\App.xaml",
+              "RelativeDocumentMoniker": "RocketTip\\App.xaml",
+              "ToolTip": "C:\\Users\\OTC\\Desktop\\PR\\RocketTip\\RocketTip\\App.xaml",
+              "RelativeToolTip": "RocketTip\\App.xaml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-11-08T05:57:02.016Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AppShell.xaml",
+              "DocumentMoniker": "C:\\Users\\OTC\\Desktop\\PR\\RocketTip\\RocketTip\\AppShell.xaml",
+              "RelativeDocumentMoniker": "RocketTip\\AppShell.xaml",
+              "ToolTip": "C:\\Users\\OTC\\Desktop\\PR\\RocketTip\\RocketTip\\AppShell.xaml",
+              "RelativeToolTip": "RocketTip\\AppShell.xaml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-11-08T05:56:58.817Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "MainPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\OTC\\Desktop\\PR\\RocketTip\\RocketTip\\MainPage.xaml.cs",
+              "RelativeDocumentMoniker": "RocketTip\\MainPage.xaml.cs",
+              "ToolTip": "C:\\Users\\OTC\\Desktop\\PR\\RocketTip\\RocketTip\\MainPage.xaml.cs",
+              "RelativeToolTip": "RocketTip\\MainPage.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAACAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-08T05:12:27.87Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
