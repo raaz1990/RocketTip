@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RocketTip.Pages.WaitStaffProfilePage"
+             Title="WaitStaffProfilePage">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20">
+
+            <!-- Profile Image and Title -->
+            <StackLayout HorizontalOptions="Center" VerticalOptions="Center" Margin="0,10">
+                <Image Source="userimage.png" HeightRequest="95" WidthRequest="95" Aspect="AspectFill" />
+                <Label Text="About Me" FontSize="20" FontAttributes="Bold" TextColor="Black" FontFamily="MontserratBold" HorizontalOptions="Center" Margin="0,10,0,0" />
+            </StackLayout>
+
+            <!-- Personal Details Section -->
+            <Label Text="Personal Details" FontSize="16" FontAttributes="Bold" TextColor="Black" FontFamily="MontserratBold" />
+            <Frame CornerRadius="10" Padding="10" BackgroundColor="Transparent" BorderColor="Transparent">
+                <VerticalStackLayout Spacing="10">
+                    <!-- Email Entry -->
+                    <Frame CornerRadius="8" Padding="10" BackgroundColor="White" BorderColor="#F3F3F3">
+                        <Entry Placeholder="Email Address" Text="aashifa@gmail.com" TextColor="Black" PlaceholderColor="Gray" FontFamily="MontserratRegular" BackgroundColor="Transparent" />
+                    </Frame>
+                    <!-- Password Entry -->
+                    <Frame CornerRadius="8" Padding="10" BackgroundColor="White" BorderColor="#F3F3F3">
+                        <Entry Placeholder="Password" Text="********" TextColor="Black" PlaceholderColor="Gray" FontFamily="MontserratRegular" IsPassword="True" BackgroundColor="Transparent" />
+                    </Frame>
+                    <Button Text="Change Password" TextColor="#F83758" FontAttributes="Bold" BackgroundColor="Transparent" HorizontalOptions="End" />
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Businesses I Work For Section -->
+            <Label Text="Businesses I Work For" FontSize="16" FontAttributes="Bold" TextColor="Black" FontFamily="MontserratBold" />
+            <HorizontalStackLayout Spacing="10">
+                <Image Source="femalebackground.png" WidthRequest="80" HeightRequest="80" Aspect="AspectFill" />
+                <Image Source="femalebackground.png" WidthRequest="80" HeightRequest="80" Aspect="AspectFill" />
+                <Image Source="femalebackground.png" WidthRequest="80" HeightRequest="80" Aspect="AspectFill" />
+                <Frame WidthRequest="80" HeightRequest="80" BorderColor="Gray" CornerRadius="10" BackgroundColor="#F3F3F3">
+                    <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+                        <Image Source="add.png" WidthRequest="30" HeightRequest="30" />
+                    </StackLayout>
+                </Frame>
+            </HorizontalStackLayout>
+
+            <!-- Bank Account Details Section -->
+            <Label Text="Bank Account Details" FontSize="16" FontAttributes="Bold" TextColor="Black" FontFamily="MontserratBold" />
+            <Frame CornerRadius="10" Padding="10" BackgroundColor="Transparent" BorderColor="Transparent">
+                <VerticalStackLayout Spacing="10">
+                    <!-- Bank Account Number -->
+                    <Frame CornerRadius="8" Padding="10" BackgroundColor="White" BorderColor="#F3F3F3">
+                        <Entry Placeholder="Bank Account Number" Text="204356XXXXXX" TextColor="Black" PlaceholderColor="Gray" FontFamily="MontserratRegular" BackgroundColor="Transparent" />
+                    </Frame>
+                    <!-- Account Holder's Name -->
+                    <Frame CornerRadius="8" Padding="10" BackgroundColor="White" BorderColor="#F3F3F3">
+                        <Entry Placeholder="Account Holder's Name" Text="Abhiraj Sisodiya" TextColor="Black" PlaceholderColor="Gray" FontFamily="MontserratRegular" BackgroundColor="Transparent" />
+                    </Frame>
+                    <!-- IFSC Code -->
+                    <Frame CornerRadius="8" Padding="10" BackgroundColor="White" BorderColor="#F3F3F3">
+                        <Entry Placeholder="IFSC Code" Text="SBIN00428" TextColor="Black" PlaceholderColor="Gray" FontFamily="MontserratRegular" BackgroundColor="Transparent" />
+                    </Frame>
+                </VerticalStackLayout>
+            </Frame>
+
+            <!-- Save Button -->
+            <Button Text="Save"
+                    BackgroundColor="#F83758"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    CornerRadius="10"
+                    HeightRequest="50"
+                    Margin="0,20" Clicked="OnSaveClick"/>
+        </VerticalStackLayout>
+    </ScrollView>
+
+
+</ContentPage>

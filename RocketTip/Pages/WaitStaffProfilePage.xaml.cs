@@ -1,15 +1,14 @@
 namespace RocketTip.Pages;
 
-public partial class NewAccountPage : ContentPage
+public partial class WaitStaffProfilePage : ContentPage
 {
-	public NewAccountPage()
+	public WaitStaffProfilePage()
 	{
 		InitializeComponent();
 	}
-
     private async void OnSaveClick(object sender, EventArgs e)
     {
         // Navigate to the Sign Up page
-        await Navigation.PushAsync(new WaitStaffProfilePage());
+        await Navigation.PushAsync(new HomePage());
     }
 }

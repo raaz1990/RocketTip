@@ -55,7 +55,7 @@
                 FontAttributes="Bold" 
                 CornerRadius="5" 
                 HeightRequest="50" 
-                Grid.Row="3"/>
+                Grid.Row="3" Clicked="OnSaveClick"/>
         </Grid>
     </ScrollView>
 

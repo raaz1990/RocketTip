@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RocketTip.Pages.TipsPage"
+             Title="Tips"
+             Shell.NavBarIsVisible="False">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+
+            <!-- Header -->
+            <Grid ColumnDefinitions="Auto,*,Auto" VerticalOptions="Start" Padding="0,20,0,0">
+                <Image Source="back_icon.png" WidthRequest="24" HeightRequest="24" Grid.Column="0" />
+                <Label Text="Tips" Grid.Column="1" HorizontalOptions="Center" FontSize="18" FontAttributes="Bold"/>
+                <Image Source="more_icon.png" WidthRequest="24" HeightRequest="24" Grid.Column="2" />
+            </Grid>
+
+            <!-- Total Tips Section -->
+            <VerticalStackLayout Padding="10,20">
+                <Label Text="Total Tips" FontSize="16" TextColor="Black" />
+                <Label Text="$124.57" FontSize="40" FontAttributes="Bold" TextColor="Black" />
+            </VerticalStackLayout>
+
+            <!-- Last Transactions Section -->
+            <Grid ColumnDefinitions="*,Auto" Padding="0,10" VerticalOptions="Start">
+                <Label Text="Last Transactions" FontSize="16" FontAttributes="Bold" TextColor="Black" />
+                <Button Text="View All" FontAttributes="Bold" BackgroundColor="Transparent" TextColor="#FF3D58" HorizontalOptions="End" />
+            </Grid>
+
+            <!-- Transactions List -->
+            <CollectionView x:Name="TransactionsCollectionView" Margin="0,10">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="0,10" RowDefinitions="Auto" ColumnDefinitions="Auto,*,Auto" VerticalOptions="CenterAndExpand">
+                            <!-- Avatar -->
+                            <Frame CornerRadius="50" Padding="0">
+                            <Image Source="userimage.png" Aspect="AspectFill" WidthRequest="40" HeightRequest="40" Grid.Column="0" />
+                            </Frame>
+                            <!-- Transaction Details -->
+                            <VerticalStackLayout Spacing="2" Grid.Column="1" Padding="10,0">
+                                <Label Text="{Binding Name}" FontSize="14" TextColor="Black" FontAttributes="Bold" />
+                                <Label Text="{Binding DateTime}" FontSize="12" TextColor="Gray" />
+                            </VerticalStackLayout>
+
+                            <!-- Amount -->
+                            <Label Text="{Binding Amount}" FontSize="14" FontAttributes="Bold" TextColor="Black" HorizontalOptions="End" Grid.Column="2" />
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <!-- All Transactions Button -->
+            <Button Text="All Transactions" 
+                    BackgroundColor="#FF3D58"
+                    TextColor="White" 
+                    FontAttributes="Bold" 
+                    CornerRadius="5" 
+                    HeightRequest="50"
+                    HorizontalOptions="FillAndExpand"
+                    Margin="0,20,0,0" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

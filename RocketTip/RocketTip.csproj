@@ -66,6 +66,10 @@
 	  <None Remove="Resources\Images\femalebackground.png" />
 	  <None Remove="Resources\Images\google_icon.png" />
 	  <None Remove="Resources\Images\hide.png" />
+	  <None Remove="Resources\Images\homepage_banner1.jpg" />
+	  <None Remove="Resources\Images\homepage_banner2.jpg" />
+	  <None Remove="Resources\Images\homepage_banner3.jpg" />
+	  <None Remove="Resources\Images\menu_icon.png" />
 	  <None Remove="Resources\Images\password.png" />
 	  <None Remove="Resources\Images\profile.png" />
 	  <None Remove="Resources\Images\userimage.png" />
@@ -84,6 +88,9 @@
 	  <MauiXaml Update="Pages\ForgotPasswordPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Pages\HomePage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Pages\LoginPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
@@ -91,6 +98,12 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\OnboardingPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\TipsPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\WaitStaffProfilePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

@@ -13,7 +13,7 @@
         Shell.FlyoutBehavior="Disabled" 
         Shell.FlyoutItemIsVisible="False"/> 
     <!--<ShellContent 
-        ContentTemplate="{DataTemplate pages:NewAccountPage}" 
+        ContentTemplate="{DataTemplate pages:HomePage}" 
         Shell.FlyoutBehavior="Disabled" 
         Shell.FlyoutItemIsVisible="False"/>-->
 
