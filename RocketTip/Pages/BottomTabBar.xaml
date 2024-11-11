@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RocketTip.Controls.BottomTabBar">
+
+    <ContentView.Content>
+        <Frame Padding="0"
+       HasShadow="True">
+            <Grid BackgroundColor="White" Padding="10" HeightRequest="80">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <!-- Home Tab -->
+                <VerticalStackLayout Grid.Column="0" HorizontalOptions="Center" Spacing="2">
+                    <Image Source="home_icon.png" WidthRequest="24" HeightRequest="24" />
+                    <Label Text="Home" FontSize="10" />
+                    <VerticalStackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnHomeTapped"/>
+                    </VerticalStackLayout.GestureRecognizers>
+                </VerticalStackLayout>
+
+                <!-- Refer Tab -->
+                <VerticalStackLayout Grid.Column="1" HorizontalOptions="Center" Spacing="2">
+                    <Image Source="heart_icon.png" WidthRequest="24" HeightRequest="24" />
+                    <Label Text="Refer" FontSize="10" />
+                    <VerticalStackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnReferTapped"/>
+                    </VerticalStackLayout.GestureRecognizers>
+                </VerticalStackLayout>
+
+                <!-- New Tip Tab -->
+                <VerticalStackLayout Grid.Column="2" HorizontalOptions="Center" Spacing="1">
+                    <Image Source="roket_icon.png" WidthRequest="45" HeightRequest="45" BackgroundColor="Transparent" />
+                    <Label Text="New Tip" FontSize="10" TextColor="#2196F3" />
+                    <VerticalStackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnNewTipTapped"/>
+                    </VerticalStackLayout.GestureRecognizers>
+                </VerticalStackLayout>
+
+                <!-- Transactions Tab -->
+                <VerticalStackLayout Grid.Column="3" HorizontalOptions="Center" Spacing="2">
+                    <Image Source="dollar_icon.png" WidthRequest="24" HeightRequest="24"/>
+                    <Label Text="Transactions" FontSize="10" />
+                    <VerticalStackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnTransactionsTapped"/>
+                    </VerticalStackLayout.GestureRecognizers>
+                </VerticalStackLayout>
+
+                <!-- Settings Tab -->
+                <VerticalStackLayout Grid.Column="4" HorizontalOptions="Center" Spacing="2" >
+                    <Image Source="setting_icon.png" WidthRequest="24" HeightRequest="24"/>
+                    <Label Text="Setting" FontSize="10" />
+                    <VerticalStackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnSettingsTapped"/>
+                    </VerticalStackLayout.GestureRecognizers>
+                </VerticalStackLayout>
+
+            </Grid>
+        </Frame>
+    </ContentView.Content>
+</ContentView>

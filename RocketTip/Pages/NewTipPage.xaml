@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:RocketTip.Controls"
+             x:Class="RocketTip.Pages.NewTipPage"
+             Title="NewTipPage" BackgroundColor="White"
+             Shell.NavBarIsVisible="False">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <!-- Scrollable Content -->
+        <ScrollView Grid.Row="0">
+            <VerticalStackLayout Padding="20" Spacing="20">
+
+                <!-- Header -->
+                <Grid ColumnDefinitions="Auto,*,Auto" VerticalOptions="Start">
+                    <Image Source="menu_icon.png" WidthRequest="24" HeightRequest="24" Grid.Column="0" />
+                    <Label Text="Rocket.Tips" Grid.Column="1" HorizontalOptions="Center" FontSize="24" FontAttributes="Bold" FontFamily="MontserratBold">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Rocket." TextColor="Black" />
+                                <Span Text="Tips" TextColor="#2196F3" />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Image Source="userimage.png" WidthRequest="32" HeightRequest="32" Grid.Column="2" />
+                </Grid>
+                <Grid RowDefinitions="*,*">
+                <!-- Total Tips Section -->
+                <Frame Grid.Row="0" CornerRadius="15" BorderColor="Transparent" BackgroundColor="Transparent" >
+                    <Grid RowDefinitions="*,*" BackgroundColor="Transparent">
+                        <Label Grid.Row="0" Text="Show this screen to the customer and have them scan your bar code with their mobile phone to leave a tip. 
+Make it easier for your customer by entering the total bill amount." FontSize="16" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+                        <Grid Grid.Row="1" ColumnDefinitions="*,*" ColumnSpacing="10" VerticalOptions="Center" HorizontalOptions="Center">
+                            <HorizontalStackLayout  Grid.Column="0" Spacing="5">
+                            <Label Text="Total Tips" FontSize="16" VerticalOptions="Center" />
+                            <Image Source="dollar_icon.png" WidthRequest="14" HeightRequest="14"/>
+                            </HorizontalStackLayout>
+                            <Frame Grid.Column="1" CornerRadius="10" BorderColor="#F3F3F3" Padding="0" BackgroundColor="Transparent" WidthRequest="100">
+                                <Entry  Placeholder="Amount" TextColor="Black" PlaceholderColor="Gray" />
+                            </Frame>
+                        </Grid>
+                    </Grid>
+                </Frame>
+                    <Frame  Grid.Row="1" CornerRadius="15" BorderColor="Transparent" BackgroundColor="Transparent">
+                    <Image Grid.Column="1" Source="sample_qr.png"/>
+                </Frame>
+                </Grid>
+
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <!-- Bottom Tab Bar -->
+        <controls:BottomTabBar Grid.Row="1" VerticalOptions="End" />
+    </Grid>
+
+</ContentPage>

@@ -61,17 +61,23 @@
 	  <None Remove="Resources\Fonts\Montserrat-Regular.ttf" />
 	  <None Remove="Resources\Images\add.png" />
 	  <None Remove="Resources\Images\apple_icon.png" />
+	  <None Remove="Resources\Images\dollar_icon.png" />
 	  <None Remove="Resources\Images\email.png" />
 	  <None Remove="Resources\Images\facebook_icon.png" />
 	  <None Remove="Resources\Images\femalebackground.png" />
 	  <None Remove="Resources\Images\google_icon.png" />
+	  <None Remove="Resources\Images\heart_icon.png" />
 	  <None Remove="Resources\Images\hide.png" />
 	  <None Remove="Resources\Images\homepage_banner1.jpg" />
 	  <None Remove="Resources\Images\homepage_banner2.jpg" />
 	  <None Remove="Resources\Images\homepage_banner3.jpg" />
+	  <None Remove="Resources\Images\home_icon.png" />
 	  <None Remove="Resources\Images\menu_icon.png" />
 	  <None Remove="Resources\Images\password.png" />
 	  <None Remove="Resources\Images\profile.png" />
+	  <None Remove="Resources\Images\roket_icon.png" />
+	  <None Remove="Resources\Images\sample_qr.jpg" />
+	  <None Remove="Resources\Images\setting_icon.png" />
 	  <None Remove="Resources\Images\userimage.png" />
 	</ItemGroup>
 
@@ -82,6 +88,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="Pages\BottomTabBar.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Pages\CreateAccountPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
@@ -95,6 +104,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\NewAccountPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\NewTipPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\OnboardingPage.xaml">

@@ -1,79 +1,83 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:RocketTip.Controls"
              x:Class="RocketTip.Pages.HomePage"
-              Title="HomePage" BackgroundColor="White"
+             Title="HomePage" BackgroundColor="White"
              Shell.NavBarIsVisible="False">
-    <ScrollView>
-        <VerticalStackLayout Padding="20" Spacing="20">
 
-            <!-- Header -->
-            <Grid ColumnDefinitions="Auto,*,Auto" VerticalOptions="Start">
-                <Image Source="menu_icon.png" WidthRequest="24" HeightRequest="24" Grid.Column="0" />
-                <Label Text="Rocket.Tips" Grid.Column="1" HorizontalOptions="Center" FontSize="24" FontAttributes="Bold" FontFamily="MontserratBold">
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <Span Text="Rocket." TextColor="Black" />
-                            <Span Text="Tips" TextColor="#2196F3" />
-                        </FormattedString>
-                    </Label.FormattedText>
-                </Label>
-                <Image Source="userimage.png" WidthRequest="32" HeightRequest="32" Grid.Column="2" />
-            </Grid>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
 
-            <!-- Total Tips Section -->
-            <Frame CornerRadius="15" BorderColor="Transparent" BackgroundColor="White">
-                <Grid BackgroundColor="Transparent">
-                    <!-- Background Image -->
-                    <Image Source="homepage_banner2.jpg" Aspect="AspectFill" />
-                    <Grid ColumnDefinitions="*,*" Padding="0" >
-                        <!-- Text Content -->
-                        <StackLayout Grid.Column="0"></StackLayout>
-                        <!-- Text Content -->
-                        <VerticalStackLayout Grid.Column="1" Spacing="10" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
-                            <Label Text="Total Tips" FontSize="16" TextColor="White" />
-                            <Label Text="$124.57" FontSize="24" FontAttributes="Bold" TextColor="White" />
-                            <Frame BorderColor="White" BackgroundColor="Transparent" Padding="0">
-                            <Button Text="All Transactions →" FontSize="10" FontAttributes="Bold" BackgroundColor="Transparent" TextColor="White" HorizontalOptions="Start" Clicked="OnTransactionsClick" />
+        <!-- Scrollable Content -->
+        <ScrollView Grid.Row="0">
+            <VerticalStackLayout Padding="20" Spacing="20">
+
+                <!-- Header -->
+                <Grid ColumnDefinitions="Auto,*,Auto" VerticalOptions="Start">
+                    <Image Source="menu_icon.png" WidthRequest="24" HeightRequest="24" Grid.Column="0" />
+                    <Label Text="Rocket.Tips" Grid.Column="1" HorizontalOptions="Center" FontSize="24" FontAttributes="Bold" FontFamily="MontserratBold">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Rocket." TextColor="Black" />
+                                <Span Text="Tips" TextColor="#2196F3" />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Image Source="userimage.png" WidthRequest="32" HeightRequest="32" Grid.Column="2" />
+                </Grid>
+
+                <!-- Total Tips Section -->
+                <Frame CornerRadius="15" BorderColor="Transparent" BackgroundColor="Transparent">
+                    <Grid BackgroundColor="Transparent">
+                        <Image Source="homepage_banner2.jpg" Aspect="AspectFill" />
+                        <Grid ColumnDefinitions="*,*" Padding="0" >
+                            <StackLayout Grid.Column="0"></StackLayout>
+                            <VerticalStackLayout Grid.Column="1" Spacing="10" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                                <Label Text="Total Tips" FontSize="16" TextColor="White" />
+                                <Label Text="$124.57" FontSize="24" FontAttributes="Bold" TextColor="White" />
+                                <Frame BorderColor="White" BackgroundColor="Transparent" Padding="0">
+                                    <Button Text="All Transactions →" FontSize="10" FontAttributes="Bold" BackgroundColor="Transparent" TextColor="White" HorizontalOptions="Start" Clicked="OnTransactionsClick" />
+                                </Frame>
+                            </VerticalStackLayout>
+                        </Grid>
+                    </Grid>
+                </Frame>
+
+                <!-- New Tip Section -->
+                <Frame CornerRadius="15" BorderColor="Transparent" BackgroundColor="Transparent">
+                    <Grid>
+                        <Image Source="homepage_banner1.jpg" Aspect="AspectFill"/>
+                        <Grid ColumnDefinitions="*,*" Padding="10">
+                            <StackLayout Grid.Column="1"></StackLayout>
+                            <Frame BorderColor="White" BackgroundColor="Transparent" Grid.Column="0" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Padding="10">
+                                <Label Text="New Tip →" FontSize="12" FontAttributes="Bold" TextColor="White"/>
                             </Frame>
-                        </VerticalStackLayout>
+                        </Grid>
                     </Grid>
-                </Grid>
-            </Frame>
+                </Frame>
 
-            <!-- New Tip Section -->
-            <Frame CornerRadius="15" BorderColor="Transparent" BackgroundColor="Transparent" >
-                <Grid >
-                    <!-- Background Image -->
-                    <Image Source="homepage_banner1.jpg" Aspect="AspectFill"/>
-                    <Grid ColumnDefinitions="*,*" Padding="10">
-                        <!-- Text Content -->
-                        <StackLayout Grid.Column="1"></StackLayout>
-                        <!-- Text Content -->
-                        <Frame BorderColor="White" BackgroundColor="Transparent" Grid.Column="0" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Padding="10">
-                            <Label Text="New Tip →" FontSize="12" FontAttributes="Bold" TextColor="White"/>
-                        </Frame>
+                <!-- Refer a Friend Section -->
+                <Frame CornerRadius="15" BorderColor="Transparent" BackgroundColor="Transparent">
+                    <Grid>
+                        <Image Source="homepage_banner3.jpg" Aspect="AspectFill" />
+                        <Grid ColumnDefinitions="*,*" Padding="10">
+                            <StackLayout Grid.Column="0"></StackLayout>
+                            <VerticalStackLayout Grid.Column="1" Spacing="10" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                                <Label Text="Share the love and introduce friends and colleagues" FontSize="14" TextColor="White" />
+                                <Button Text="Refer a Friend →" HeightRequest="40" FontSize="10" FontAttributes="Bold" BackgroundColor="White" TextColor="Black" HorizontalOptions="Start" />
+                            </VerticalStackLayout>
+                        </Grid>
                     </Grid>
-                </Grid>
-            </Frame>
+                </Frame>
 
-            <!-- Refer a Friend Section -->
-            <Frame CornerRadius="15" BorderColor="Transparent" BackgroundColor="Transparent">
-                <Grid>
-                    <!-- Background Image -->
-                    <Image Source="homepage_banner3.jpg" Aspect="AspectFill" />
-                    <Grid ColumnDefinitions="*,*" Padding="10">
-                        <!-- Text Content -->
-                        <StackLayout Grid.Column="0"></StackLayout>
-                        <VerticalStackLayout Grid.Column="1" Spacing="10" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
-                            <Label Text="Share the love and introduce friends and colleagues" FontSize="14" TextColor="White" />
-                            <Button Text="Refer a Friend →" HeightRequest="40" FontSize="10" FontAttributes="Bold" BackgroundColor="White" TextColor="Black" HorizontalOptions="Start" />
-                        </VerticalStackLayout>
-                    </Grid>
-                </Grid>
-            </Frame>
-            <!-- Bottom Tab Bar -->
-    
-        </VerticalStackLayout>
-    </ScrollView>
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <!-- Bottom Tab Bar -->
+        <controls:BottomTabBar Grid.Row="1" VerticalOptions="End" />
+    </Grid>
 </ContentPage>
