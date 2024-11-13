@@ -6,4 +6,13 @@ public partial class ForgotPasswordPage : ContentPage
 	{
 		InitializeComponent();
 	}
+	private async void OnSubmitClick(object sender, EventArgs e)
+	{
+
+		if (string.IsNullOrWhiteSpace(ForgotPassword.Text))
+		{
+			await DisplayAlert("Validation Error", "Please enter your Email Address.", "OK");
+			return;
+		}
+	}
 }

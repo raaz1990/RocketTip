@@ -5,6 +5,7 @@
              Title="LoginPage" Shell.NavBarIsVisible="False">
 
     <ScrollView>
+        
         <Grid RowDefinitions="*,Auto,*" RowSpacing="20" Padding="30,50">
             <StackLayout Grid.Row="0" Spacing="30">
                 <!-- Title -->
@@ -17,11 +18,11 @@
                 <Frame CornerRadius="10" BorderColor="Transparent" Padding="10" BackgroundColor="#F3F3F3">
                     <Grid ColumnDefinitions="Auto,*">
                         <Image Grid.Column="0" Source="profile.png" WidthRequest="20" HeightRequest="20" Margin="5,0"/>
-                        <Entry Grid.Column="1" Placeholder="Username or Email" 
-                           BackgroundColor="Transparent" 
-                           TextColor="Black"
-                           PlaceholderColor="Gray"
-                           HorizontalOptions="FillAndExpand" />
+                        <Entry x:Name="UsernameEntry" Grid.Column="1" Placeholder="Username or Email" 
+                               BackgroundColor="Transparent" 
+                               TextColor="Black"
+                               PlaceholderColor="Gray"
+                               HorizontalOptions="FillAndExpand" />
                     </Grid>
                 </Frame>
 
@@ -30,22 +31,20 @@
                     <Frame CornerRadius="10" BorderColor="Transparent" Padding="10" BackgroundColor="#F3F3F3">
                         <Grid ColumnDefinitions="Auto,*,Auto">
                             <Image Grid.Column="0" Source="password.png" WidthRequest="20" HeightRequest="20" Margin="5,0"/>
-                            <Entry Grid.Column="1" Placeholder="Password" 
-                           BackgroundColor="Transparent" 
-                           TextColor="Black"
-                           PlaceholderColor="Gray"
-                           IsPassword="True" />
+                            <Entry x:Name="PasswordEntry" Grid.Column="1" Placeholder="Password" 
+                                   BackgroundColor="Transparent" 
+                                   TextColor="Black"
+                                   PlaceholderColor="Gray"
+                                   IsPassword="True" />
                             <Image Grid.Column="2" Source="hide.png" WidthRequest="20" HeightRequest="20" Margin="5,0"/>
                         </Grid>
                     </Frame>
-
-
                     <!-- Agreement Text -->
                     <HorizontalStackLayout HorizontalOptions="End" Padding="5,10">
-                    <Label Text="Forgot Password?" FontSize="12" TextColor="#F83758"/>
-                    <HorizontalStackLayout.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="OnForgotPasswordTapped"/>
-                    </HorizontalStackLayout.GestureRecognizers>
+                        <Label Text="Forgot Password?" FontSize="12" TextColor="#F83758"/>
+                        <HorizontalStackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnForgotPasswordTapped"/>
+                        </HorizontalStackLayout.GestureRecognizers>
 
                     </HorizontalStackLayout>
                 </StackLayout>
@@ -55,14 +54,16 @@
                     BackgroundColor="#F83758"
                     TextColor="White" 
                     FontAttributes="Bold" 
-                    CornerRadius="5" Clicked="OnLogin"
+                    CornerRadius="5" 
+                    Clicked="OnLogin"
                     HeightRequest="50"  Grid.Row="1"/>
+
             <StackLayout Grid.Row="2" Spacing="30" >
                 <!-- OR Continue With -->
                 <Label Text="- OR Continue with -" 
-                   FontSize="14" 
-                   TextColor="Gray" 
-                   HorizontalOptions="Center" />
+                       FontSize="14" 
+                       TextColor="Gray" 
+                       HorizontalOptions="Center" />
 
                 <!-- Social Media Icons -->
                 <HorizontalStackLayout HorizontalOptions="Center" Spacing="20">
@@ -70,7 +71,6 @@
                     <Image Source="apple_icon.png" WidthRequest="40" HeightRequest="40"/>
                     <Image Source="facebook_icon.png" WidthRequest="40" HeightRequest="40"/>
                 </HorizontalStackLayout>
-
                 <!-- Already Have an Account -->
                 <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
                     <Label Text="Create an Account " TextColor="Gray" FontFamily="MontserratRegular"/>
@@ -78,7 +78,6 @@
                     <HorizontalStackLayout.GestureRecognizers>
                         <TapGestureRecognizer Tapped="OnSignUpTapped"/>
                     </HorizontalStackLayout.GestureRecognizers>
-
                 </HorizontalStackLayout>
             </StackLayout>
         </Grid>

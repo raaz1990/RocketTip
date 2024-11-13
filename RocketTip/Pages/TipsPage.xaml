@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="RocketTip.Pages.TipsPage"
              Title="Tips"
-             Shell.NavBarIsVisible="False">
+             Shell.NavBarIsVisible="True">
     <ScrollView>
         <VerticalStackLayout Padding="20" Spacing="15">
 

@@ -4,8 +4,8 @@
              x:Class="RocketTip.Controls.BottomTabBar">
 
     <ContentView.Content>
-        <Frame Padding="0"
-       HasShadow="True">
+
+        <Frame Padding="0">
             <Grid BackgroundColor="White" Padding="10" HeightRequest="80">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
@@ -14,9 +14,14 @@
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
 
                 <!-- Home Tab -->
-                <VerticalStackLayout Grid.Column="0" HorizontalOptions="Center" Spacing="2">
+                <VerticalStackLayout Grid.Row="1" Grid.Column="0" HorizontalOptions="Center" Spacing="2">
                     <Image Source="home_icon.png" WidthRequest="24" HeightRequest="24" />
                     <Label Text="Home" FontSize="10" />
                     <VerticalStackLayout.GestureRecognizers>
@@ -25,7 +30,7 @@
                 </VerticalStackLayout>
 
                 <!-- Refer Tab -->
-                <VerticalStackLayout Grid.Column="1" HorizontalOptions="Center" Spacing="2">
+                <VerticalStackLayout Grid.Row="1" Grid.Column="1" HorizontalOptions="Center" Spacing="2">
                     <Image Source="heart_icon.png" WidthRequest="24" HeightRequest="24" />
                     <Label Text="Refer" FontSize="10" />
                     <VerticalStackLayout.GestureRecognizers>
@@ -34,16 +39,22 @@
                 </VerticalStackLayout>
 
                 <!-- New Tip Tab -->
-                <VerticalStackLayout Grid.Column="2" HorizontalOptions="Center" Spacing="1">
-                    <Image Source="roket_icon.png" WidthRequest="45" HeightRequest="45" BackgroundColor="Transparent" />
-                    <Label Text="New Tip" FontSize="10" TextColor="#2196F3" />
-                    <VerticalStackLayout.GestureRecognizers>
+                <Ellipse Grid.Row="0" Grid.RowSpan="3" Grid.Column="2"
+                     Fill="#efefef"
+                     WidthRequest="80"
+                     HeightRequest="80"
+                    
+         />
+                <VerticalStackLayout Grid.Row="0" Grid.RowSpan="2" Grid.Column="2" HorizontalOptions="Center" Spacing="1"  >
+                            <Image Source="roket_icon.png" WidthRequest="50" HeightRequest="50" />
+                            <Label Text="New Tip" FontSize="10" TextColor="#2196F3" HorizontalTextAlignment="Center" />
+  <VerticalStackLayout.GestureRecognizers>
                         <TapGestureRecognizer Tapped="OnNewTipTapped"/>
                     </VerticalStackLayout.GestureRecognizers>
                 </VerticalStackLayout>
 
                 <!-- Transactions Tab -->
-                <VerticalStackLayout Grid.Column="3" HorizontalOptions="Center" Spacing="2">
+                <VerticalStackLayout Grid.Row="1" Grid.Column="3" HorizontalOptions="Center" Spacing="2">
                     <Image Source="dollar_icon.png" WidthRequest="24" HeightRequest="24"/>
                     <Label Text="Transactions" FontSize="10" />
                     <VerticalStackLayout.GestureRecognizers>
@@ -52,7 +63,7 @@
                 </VerticalStackLayout>
 
                 <!-- Settings Tab -->
-                <VerticalStackLayout Grid.Column="4" HorizontalOptions="Center" Spacing="2" >
+                <VerticalStackLayout Grid.Row="1" Grid.Column="4" HorizontalOptions="Center" Spacing="2" >
                     <Image Source="setting_icon.png" WidthRequest="24" HeightRequest="24"/>
                     <Label Text="Setting" FontSize="10" />
                     <VerticalStackLayout.GestureRecognizers>

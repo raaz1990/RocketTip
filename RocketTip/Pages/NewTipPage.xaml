@@ -4,7 +4,7 @@
              xmlns:controls="clr-namespace:RocketTip.Controls"
              x:Class="RocketTip.Pages.NewTipPage"
              Title="NewTipPage" BackgroundColor="White"
-             Shell.NavBarIsVisible="False">
+             Shell.FlyoutBehavior="Flyout" Shell.NavBarIsVisible="False">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -18,7 +18,11 @@
 
                 <!-- Header -->
                 <Grid ColumnDefinitions="Auto,*,Auto" VerticalOptions="Start">
-                    <Image Source="menu_icon.png" WidthRequest="24" HeightRequest="24" Grid.Column="0" />
+                    <Image Source="menu_icon.png" WidthRequest="24" HeightRequest="24" Grid.Column="0">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding OpenMenuCommand}" />
+                        </Image.GestureRecognizers>
+                    </Image>
                     <Label Text="Rocket.Tips" Grid.Column="1" HorizontalOptions="Center" FontSize="24" FontAttributes="Bold" FontFamily="MontserratBold">
                         <Label.FormattedText>
                             <FormattedString>

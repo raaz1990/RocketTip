@@ -12,7 +12,7 @@
             <Frame CornerRadius="10"  BorderColor="Transparent" Padding="10" BackgroundColor="#F3F3F3">
                 <Grid ColumnDefinitions="Auto,*">
                     <Image Grid.Column="0" Source="profile.png" WidthRequest="20" HeightRequest="20" Margin="5,0"/>
-                    <Entry Grid.Column="1" Placeholder="Username or Email" 
+                    <Entry x:Name="UsernameEntry" Grid.Column="1" Placeholder="Username or Email" 
                    BackgroundColor="Transparent" 
                    TextColor="Black"
                    PlaceholderColor="Gray"
@@ -24,7 +24,7 @@
             <Frame CornerRadius="10" BorderColor="Transparent" Padding="10" BackgroundColor="#F3F3F3">
                 <Grid ColumnDefinitions="Auto,*,Auto">
                     <Image Grid.Column="0" Source="password.png" WidthRequest="20" HeightRequest="20" Margin="5,0"/>
-                    <Entry Grid.Column="1" Placeholder="Password" 
+                    <Entry x:Name="PasswordEntry" Grid.Column="1" Placeholder="Password" 
                    BackgroundColor="Transparent" 
                    TextColor="Black"
                    PlaceholderColor="Gray"
@@ -37,7 +37,7 @@
             <Frame CornerRadius="10" BorderColor="Transparent" Padding="10" BackgroundColor="#F3F3F3">
                 <Grid ColumnDefinitions="Auto,*,Auto">
                     <Image Grid.Column="0" Source="password.png" WidthRequest="20" HeightRequest="20" Margin="5,0"/>
-                    <Entry Grid.Column="1" Placeholder="Confirm Password" 
+                    <Entry x:Name="ConfirmPasswordEntry" Grid.Column="1" Placeholder="Confirm Password" 
                    BackgroundColor="Transparent" 
                    TextColor="Black"
                    PlaceholderColor="Gray"

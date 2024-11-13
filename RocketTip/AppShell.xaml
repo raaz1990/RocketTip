@@ -3,18 +3,50 @@
     x:Class="RocketTip.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
     xmlns:local="clr-namespace:RocketTip" xmlns:pages="clr-namespace:RocketTip.Pages"
-    Shell.FlyoutBehavior="Disabled"
-    Title="RocketTip">
+    Title="RocketTip" Shell.FlyoutBehavior="Flyout"
+     >
+    <ShellContent ContentTemplate="{DataTemplate pages:OnboardingPage}" Shell.FlyoutBehavior="Disabled" Shell.FlyoutItemIsVisible="False"/>
+    <!--<Shell.Behaviors>
+        <toolkit:StatusBarBehavior StatusBarColor="#F83758"/>
+    </Shell.Behaviors>-->
+    <ShellItem Route="HomePage" Title="Home" Icon="home_icon">
+        <ShellContent ContentTemplate="{DataTemplate pages:HomePage}" />
+    </ShellItem>
+    <ShellItem Route="HomePage" Title="Refer" Icon="heart_icon">
+        <ShellContent  ContentTemplate="{DataTemplate pages:HomePage}" />
+    </ShellItem>
+    <ShellItem Route="NewTipPage" Title="New Tip" Icon="roket_icon">
+        <ShellContent ContentTemplate="{DataTemplate pages:NewTipPage}" />
+    </ShellItem>
+    <ShellItem Route="WaitStaffProfilePage" Title="Profile" Icon="dollar_icon">
+        <ShellContent ContentTemplate="{DataTemplate pages:TipsPage}"/>
+    </ShellItem>
+    <ShellItem Route="WaitStaffProfilePage" Title="Settings" Icon="setting_icon">
+        <ShellContent ContentTemplate="{DataTemplate pages:WaitStaffProfilePage}"/>
+    </ShellItem>
+    <!--<ShellContent ContentTemplate="{DataTemplate pages:HomePage}" Shell.FlyoutBehavior="Flyout" Shell.FlyoutItemIsVisible="True"/>-->
+
+    <Shell.FlyoutHeader>
+        <Border BackgroundColor="White" Padding="10" StrokeThickness="0">
+            <VerticalStackLayout HorizontalOptions="Center" Spacing="5">
+                <Image Source="roket_icon.png" HeightRequest="50" WidthRequest="50" HorizontalOptions="Center" Margin="20,10" />
+                <Label Text="Roket Tip" TextColor="#F83758" TextTransform="Uppercase" FontAttributes="Bold" FontSize="18"/>
+            </VerticalStackLayout>
+        </Border>
+    </Shell.FlyoutHeader>
+
+    <!-- Define Flyout Menu Items -->
+    <Shell.MenuItemTemplate>
+        <DataTemplate>
+            <Grid BackgroundColor="pink" ColumnDefinitions="Auto, *" Padding="10" ColumnSpacing="15" RowSpacing="5">
+                <Image Grid.Column="0" HeightRequest="30" Source="{Binding Icon}" WidthRequest="30" />
+                <Label Grid.Column="1" TextColor="Black" Text="{Binding Title}" FontSize="24" />
+            </Grid>
+        </DataTemplate>
+    </Shell.MenuItemTemplate>
 
    
-    <ShellContent 
-        ContentTemplate="{DataTemplate pages:OnboardingPage}" 
-        Shell.FlyoutBehavior="Disabled" 
-        Shell.FlyoutItemIsVisible="False"/> 
-    <!--<ShellContent 
-        ContentTemplate="{DataTemplate pages:HomePage}" 
-        Shell.FlyoutBehavior="Disabled" 
-        Shell.FlyoutItemIsVisible="False"/>-->
 
 </Shell>
