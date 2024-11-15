@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:RocketTip.Controls"
+             x:Class="RocketTip.Pages.PayTipPage" Shell.FlyoutBehavior="Flyout" Shell.NavBarIsVisible="False"
+             Title="PayTipPage">
+    <ContentPage.Content>
+        <Grid RowDefinitions="*,Auto">
+            <ScrollView Grid.Row="0">
+                <VerticalStackLayout Padding="20" Spacing="25">
+
+                    <!-- Header -->
+                    <HorizontalStackLayout HorizontalOptions="Center" Spacing="5">
+                        <Image Source="rockettipslogowithroce.png" HeightRequest="200" />
+                    </HorizontalStackLayout>
+
+                    <!-- Total Bill Section -->
+                    <HorizontalStackLayout HorizontalOptions="Start" Spacing="15">
+                        <Grid RowDefinitions="*,*">
+                            <Label Grid.Row="0" Text="Your Tip" FontSize="18" FontAttributes="Bold" HorizontalOptions="Start" />
+                            <Label Grid.Row="1" Text="(including fee)" FontSize="18" FontAttributes="Bold" HorizontalOptions="Start" />
+                        </Grid>
+                        <HorizontalStackLayout  Spacing="10">
+                            <Frame Padding="0" BorderColor="Gray" CornerRadius="5" HasShadow="False" VerticalOptions="Center" HorizontalOptions="End">
+                                <Entry Placeholder="Enter tip Amount" FontSize="18" HorizontalOptions="End" Keyboard="Numeric" />
+                            </Frame>
+                        </HorizontalStackLayout>
+                    </HorizontalStackLayout>
+                    <!-- Custom Tip Section -->
+                    <HorizontalStackLayout HorizontalOptions="Center" Spacing="20">
+                        <Image Source="ipay_icon.png" HeightRequest="80" />
+                        <Image Source="gpay_icon.png" HeightRequest="80" />
+                    </HorizontalStackLayout>
+                    <HorizontalStackLayout HorizontalOptions="Center" Spacing="20">
+                        <Image Source="card_1.png" HeightRequest="60" />
+                        <Image Source="card_2.png" HeightRequest="60" />
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+            </ScrollView>
+
+            <!-- Bottom Tab Bar -->
+            <controls:BottomTabBar Grid.Row="1" VerticalOptions="End" />
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

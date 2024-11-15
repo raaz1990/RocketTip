@@ -16,7 +16,7 @@ namespace RocketTip.Controls
 
         private async void OnReferTapped(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new HomePage());
+            await Navigation.PushAsync(new LeaveTipPage());
         }
 
         private async void OnNewTipTapped(object sender, EventArgs e)

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:RocketTip.Controls"
+             x:Class="RocketTip.Pages.LeaveTipPage" Shell.FlyoutBehavior="Flyout" Shell.NavBarIsVisible="False"
+             Title="Leave Tip Page">
+    <ContentPage.Content>
+        <Grid RowDefinitions="*,Auto">
+            <ScrollView Grid.Row="0">
+                <VerticalStackLayout Padding="20" Spacing="25">
+
+                    <!-- Header -->
+                    <HorizontalStackLayout HorizontalOptions="Center" Spacing="5">
+                        <Label Text="Thank you for using " FontSize="18" />
+                        <Image Source="rockettipslogo.png" WidthRequest="100" />
+                    </HorizontalStackLayout>
+
+                    <!-- Total Bill Section -->
+                    <Label Text="Total Bill" FontSize="18" FontAttributes="Bold" HorizontalOptions="Start" />
+                    <Grid ColumnDefinitions="*,*" ColumnSpacing="10">
+                        <HorizontalStackLayout Grid.Column="0" Spacing="10">
+                            <Label Text="$" FontSize="24" VerticalOptions="Center" />
+                            <Frame Padding="0" BorderColor="Gray" CornerRadius="5" HasShadow="False" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+                                <Entry x:Name="TotalBillEntry" Placeholder="Enter tip Amount" FontSize="18" HorizontalOptions="FillAndExpand" Keyboard="Numeric" />
+                            </Frame>
+                        </HorizontalStackLayout>
+                        <Button Grid.Column="1" Text="Change Currency" BackgroundColor="#FF6B6B" TextColor="White" CornerRadius="10" FontSize="12" />
+                    </Grid>
+
+                    <!-- Tip Percentage Buttons -->
+                    <Grid ColumnDefinitions="*,*,*">
+                        <Button Grid.Column="0" x:Name="Button10" Text="10%" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="1" CornerRadius="5" WidthRequest="100" HeightRequest="55" Clicked="OnPercentageClicked" />
+                        <Button Grid.Column="1" x:Name="Button15" Text="15%" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="1" CornerRadius="5" WidthRequest="100" HeightRequest="55" Clicked="OnPercentageClicked" />
+                        <Button Grid.Column="2" x:Name="Button20" Text="20%" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="1" CornerRadius="5" WidthRequest="100" HeightRequest="55" Clicked="OnPercentageClicked" />
+                    </Grid>
+
+                    <!-- Custom Tip Section -->
+                    <Label Text="Custom Tip" FontSize="18" FontAttributes="Bold" HorizontalOptions="Start" />
+                    <Grid ColumnDefinitions="*,*" ColumnSpacing="10">
+                        <HorizontalStackLayout Grid.Column="0" Spacing="10">
+                            <Label Text="$" FontSize="24" VerticalOptions="Center" />
+                            <Frame Padding="0" BorderColor="Gray" CornerRadius="5" HasShadow="False" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+                                <Entry x:Name="CustomTipEntry" Placeholder="Enter Custom Tip" FontSize="18" HorizontalOptions="FillAndExpand" Keyboard="Numeric" />
+                            </Frame>
+                        </HorizontalStackLayout>
+                        <Button Grid.Column="1" Text="Change Currency" BackgroundColor="#FF6B6B" TextColor="White" CornerRadius="10" FontSize="12" />
+                    </Grid>
+
+                    <!-- Split the Tip Section -->
+                    <Label Text="Split the Tip?" FontSize="18" FontAttributes="Bold" HorizontalOptions="Start" />
+                    <HorizontalStackLayout Spacing="10">
+                        <Frame Padding="0" BorderColor="Gray" CornerRadius="5" HasShadow="False" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+                            <Entry x:Name="SplitTipEntry" Placeholder="Number of people" FontSize="18" Keyboard="Numeric" HorizontalOptions="FillAndExpand" />
+                        </Frame>
+                        <Label Text="people" FontSize="18" VerticalOptions="Center" />
+                    </HorizontalStackLayout>
+
+                    <!-- Tip Amount Section -->
+                    <Label Text="Your Tip (Including Fee of $0.50)" FontSize="16" HorizontalOptions="Start" />
+                    <Label x:Name="TipAmountLabel" Text="$15.07" FontSize="36" FontAttributes="Bold" HorizontalOptions="Center" TextColor="Black" />
+
+                    <!-- Reward Button -->
+                    <Button Text="Reward Your Wait Staff" Margin="30,10" BackgroundColor="#FF6B6B" TextColor="White" FontSize="18" CornerRadius="10" HorizontalOptions="Fill" Clicked="OnClainTapped" />
+
+                </VerticalStackLayout>
+            </ScrollView>
+
+            <!-- Bottom Tab Bar -->
+            <controls:BottomTabBar Grid.Row="1" VerticalOptions="End" />
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

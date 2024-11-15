@@ -61,14 +61,18 @@
 	  <None Remove="Resources\Fonts\Montserrat-Regular.ttf" />
 	  <None Remove="Resources\Images\add.png" />
 	  <None Remove="Resources\Images\apple_icon.png" />
+	  <None Remove="Resources\Images\card_1.png" />
+	  <None Remove="Resources\Images\card_2.png" />
 	  <None Remove="Resources\Images\dollar_icon.png" />
 	  <None Remove="Resources\Images\email.png" />
 	  <None Remove="Resources\Images\facebook_icon.png" />
 	  <None Remove="Resources\Images\femalebackground.png" />
 	  <None Remove="Resources\Images\google_icon.png" />
+	  <None Remove="Resources\Images\gpay_icon.png" />
 	  <None Remove="Resources\Images\heart_icon.png" />
 	  <None Remove="Resources\Images\hide.png" />
 	  <None Remove="Resources\Images\home_icon.png" />
+	  <None Remove="Resources\Images\ipay_icon.png" />
 	  <None Remove="Resources\Images\menu_icon.png" />
 	  <None Remove="Resources\Images\password.png" />
 	  <None Remove="Resources\Images\profile.png" />
@@ -85,6 +89,7 @@
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
+		<PackageReference Include="ZXing.Net" Version="0.16.9" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -100,6 +105,9 @@
 	  <MauiXaml Update="Pages\HomePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Pages\LeaveTipPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Pages\LoginPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
@@ -110,6 +118,15 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\OnboardingPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\PayTipPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\QRReadingPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\TipsDetailPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\TipsPage.xaml">

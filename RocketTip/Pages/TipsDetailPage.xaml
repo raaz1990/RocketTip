@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RocketTip.Pages.TipsDetailPage"
+             xmlns:controls="clr-namespace:RocketTip.Controls"
+             Title="TipsDetailPage" Shell.FlyoutBehavior="Flyout" Shell.NavBarIsVisible="False">
+    <Grid RowDefinitions="*,Auto">
+        <ScrollView Grid.Row="0">
+            <VerticalStackLayout Padding="20" Spacing="15">
+
+                <!-- Tip Received Section -->
+                <Label Text="Tip Received" FontSize="18" FontAttributes="Bold" HorizontalOptions="Start" />
+                <Label Text="From Oct 14, 2024, 10:24AM" FontSize="14" HorizontalOptions="Start" />
+                <Label Text="$14.57" FontSize="60" FontAttributes="Bold" HorizontalOptions="Center" />
+                <!-- Associate Tip To Section -->
+                <Label Text="Associate Tip To (Optional)" FontSize="16" FontAttributes="Bold" />
+                <HorizontalStackLayout Spacing="10">
+                    <Frame WidthRequest="100" HeightRequest="100" CornerRadius="10" HasShadow="False">
+                        <StackLayout>
+                            <Image Source="ivy_east.png" Aspect="AspectFill" />
+                            <Label Text="The Ivy East" FontSize="12" HorizontalOptions="Center" />
+                        </StackLayout>
+                    </Frame>
+                    <Frame WidthRequest="100" HeightRequest="100" CornerRadius="10" HasShadow="False">
+                        <StackLayout>
+                            <Image Source="school_yard.png" Aspect="AspectFill" />
+                            <Label Text="The School Yard" FontSize="12" HorizontalOptions="Center" />
+                        </StackLayout>
+                    </Frame>
+                    <Frame WidthRequest="100" HeightRequest="100" CornerRadius="10" HasShadow="False">
+                        <StackLayout>
+                            <Image Source="bank_house.png" Aspect="AspectFill" />
+                            <Label Text="The Bank House" FontSize="12" HorizontalOptions="Center" />
+                        </StackLayout>
+                    </Frame>
+                </HorizontalStackLayout>
+
+                <!-- Share Your Tip Section -->
+                <Label Text="Share Your Tip" FontSize="16" FontAttributes="Bold" />
+
+                <!-- First User's Tip Selection -->
+                <HorizontalStackLayout Spacing="10">
+                    <Grid ColumnDefinitions="*,*" ColumnSpacing="20">
+                        <VerticalStackLayout Grid.Column="0" Margin="20,0">
+                            <Image Source="userimage.png" WidthRequest="40" HeightRequest="40" Aspect="AspectFill" />
+                            <Label Text="Yara Khalil" FontSize="12" HorizontalOptions="Center" />
+                        </VerticalStackLayout>
+                        <HorizontalStackLayout Grid.Column="1" Spacing="15">
+                            <Button x:Name="YaraButton10" Text="10%" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="1" CornerRadius="5" Clicked="OnPercentageClicked" />
+                            <Button x:Name="YaraButton15" Text="15%" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="1" CornerRadius="5" Clicked="OnPercentageClicked" />
+                            <Button x:Name="YaraButton20" Text="20%" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="1" CornerRadius="5" Clicked="OnPercentageClicked" />
+                        </HorizontalStackLayout>
+                    </Grid>
+                </HorizontalStackLayout>
+
+                <!-- Second User's Tip Selection -->
+                <HorizontalStackLayout Spacing="10">
+                    <Grid ColumnDefinitions="*,*" ColumnSpacing="20">
+                        <VerticalStackLayout Grid.Column="0" Margin="20,0">
+                            <Image Source="userimage.png" WidthRequest="40" HeightRequest="40" Aspect="AspectFill" />
+                            <Label Text="Reem Khaled" FontSize="12" HorizontalOptions="Center" />
+                        </VerticalStackLayout>
+                        <HorizontalStackLayout Grid.Column="1" Spacing="5">
+                            <Button x:Name="ReemButton10" Text="10%" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="1" CornerRadius="5" Clicked="OnPercentageClicked" />
+                            <Button x:Name="ReemButton15" Text="15%" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="1" CornerRadius="5" Clicked="OnPercentageClicked" />
+                            <Button x:Name="ReemButton20" Text="20%" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="1" CornerRadius="5" Clicked="OnPercentageClicked" />
+                        </HorizontalStackLayout>
+                    </Grid>
+                </HorizontalStackLayout>
+
+                <!-- Allocated and Your Tip Section -->
+                <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
+                    <Label Text="Allocated " FontSize="18" />
+                    <Label Text=" $1.46" FontSize="18" FontAttributes="Bold" />
+                </HorizontalStackLayout>
+                <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
+                    <Label Text="Your Tip " FontSize="18" />
+                    <Label Text=" $13.11" FontSize="18" FontAttributes="Bold" />
+                </HorizontalStackLayout>
+
+                <!-- Split and Claim Button -->
+                <Button Text="Split and Claim Your Tip" BackgroundColor="#FF6B6B" TextColor="White" CornerRadius="10" FontSize="18" Clicked="OnClainTapped" />
+
+            </VerticalStackLayout>
+        </ScrollView>
+        <controls:BottomTabBar Grid.Row="1" VerticalOptions="End" />
+    </Grid>
+</ContentPage>
