@@ -1,0 +1,69 @@
+﻿@page "/"
+
+<div class="login-container">
+    <h1>Welcome Back!</h1>
+
+    <!-- Username Input -->
+    <div class="input-group">
+        <span class="input-icon">
+            <img src="images/profile.png" width="25px" alt="User Icon" />
+        </span>
+        <input type="text" placeholder="Username or Email" @bind="Username" />
+    </div>
+
+    <!-- Password Input -->
+    <div class="input-group">
+        <span class="input-icon">
+            <img src="images/password.png" width="20px" alt="Lock Icon" />
+        </span>
+        <input type="password" placeholder="Password" @bind="Password" />
+        <span class="input-icon-right">
+            <img src="images/hide.png" width="25px"  alt="Eye Icon" @onclick="TogglePasswordVisibility" />
+        </span>
+    </div>
+
+    <!-- Forgot Password Link -->
+    <p class="forgot-password"><a href="/forgot-password">Forgot Password?</a></p>
+
+    <!-- Login Button -->
+    <button class="login-button" @onclick="HandleLogin">Login</button>
+
+    <!-- Divider for OR Continue With -->
+    <p class="or-divider">- OR Continue with -</p>
+
+    <!-- Social Login Options -->
+    <div class="social-login">
+        <a href="#" class="social-icon">
+            <img src="images/google_icon.png" alt="Google Icon" />
+        </a>
+        <a href="#" class="social-icon">
+            <img src="images/apple_icon.png" alt="Apple Icon" />
+        </a>
+        <a href="#" class="social-icon">
+            <img src="images/facebook_icon.png" alt="Facebook Icon" />
+        </a>
+    </div>
+
+    <!-- Sign Up Link -->
+    <p class="signup-link">Create An Account <a href="/register">Sign Up</a></p>
+</div>
+
+@code {
+    private string Username { get; set; } = string.Empty;
+    private string Password { get; set; } = string.Empty;
+    private bool IsPasswordVisible { get; set; } = false;
+
+    private void HandleLogin()
+    {
+        // Login logic here
+        //NavigationManager.NavigateTo("/dashboard");
+    }
+
+    private void TogglePasswordVisibility()
+    {
+        IsPasswordVisible = !IsPasswordVisible;
+    }
+
+    [Inject]
+    private NavigationManager NavigationManager { get; set; } = default!;
+}

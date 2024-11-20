@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35027.167
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RocketTip", "RocketTip\RocketTip.csproj", "{CDB1E18F-8E3A-4B7C-8322-8D02761CA38B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RocketTip", "RocketTip\RocketTip.csproj", "{CDB1E18F-8E3A-4B7C-8322-8D02761CA38B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RocketTipPWA", "RocketTipPWA\RocketTipPWA.csproj", "{3AD863BD-AE4D-4472-98BD-666F55B2BAEA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,6 +19,10 @@ Global
 		{CDB1E18F-8E3A-4B7C-8322-8D02761CA38B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CDB1E18F-8E3A-4B7C-8322-8D02761CA38B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CDB1E18F-8E3A-4B7C-8322-8D02761CA38B}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{3AD863BD-AE4D-4472-98BD-666F55B2BAEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AD863BD-AE4D-4472-98BD-666F55B2BAEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3AD863BD-AE4D-4472-98BD-666F55B2BAEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3AD863BD-AE4D-4472-98BD-666F55B2BAEA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
