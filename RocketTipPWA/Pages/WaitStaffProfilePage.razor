@@ -1,0 +1,107 @@
+﻿@page "/WaitStaffProfile"
+
+@inject NavigationManager NavManager
+@using System.ComponentModel.DataAnnotations
+
+<div class="container mt-3 mb-5">
+    <!-- Back Button -->
+    <button class="btn btn-light" onclick="history.back()">⬅</button>
+
+    <!-- Profile Image and Title -->
+    <div class="text-center mt-3">
+        <img src="images/userimage.png" alt="User Profile" class="rounded-circle" style="width: 95px; height: 95px;">
+        <h3 class="mt-3">About Me</h3>
+    </div>
+
+    <!-- Personal Details Section -->
+    <div class="mt-4">
+        <h5 class="font-weight-bold">Personal Details</h5>
+        <div class="form-group p-2">
+            <label class="m-2">Email Address</label>
+            <input type="email" class="form-control" placeholder="Email Address" @bind="email">
+        </div>
+        <div class="form-group p-2">
+            <label class="m-2">Password</label>
+            <input type="password" class="form-control" placeholder="Password">
+            <button class="btn btn-link text-danger mt-2" @onclick="ChangePassword">Change Password</button>
+        </div>
+    </div>
+
+    <!-- Businesses I Work For Section -->
+    <div class="mt-4">
+        <h5 class="font-weight-bold">Businesses I Work For</h5>
+        <div class="d-flex flex-wrap">
+            @foreach (var business in businesses)
+            {
+                <div class="m-2">
+                    <img src="@business.ImageUrl" alt="@business.Name" class="img-thumbnail" style="width: 80px; height: 80px;">
+                    <p class="text-center">@business.Name</p>
+                </div>
+            }
+            <!-- Add new business button -->
+            <div class="m-2">
+                <button class="btn btn-light border" style="width: 80px; height: 80px;">
+                    <img src="images/add.png" class="rounded-circle" style="width: 25px; height: 25px;">
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bank Account Details Section -->
+    <div class="mt-4">
+        <h5 class="font-weight-bold">Bank Account Details</h5>
+        <div class="form-group">
+            <label>Bank Account Number</label>
+            <input type="text" class="form-control" placeholder="Bank Account Number" @bind="bankAccountNumber">
+        </div>
+        <div class="form-group">
+            <label>Account Holder's Name</label>
+            <input type="text" class="form-control" placeholder="Account Holder's Name" @bind="accountHolderName">
+        </div>
+        <div class="form-group">
+            <label>IFSC Code</label>
+            <input type="text" class="form-control" placeholder="IFSC Code" @bind="ifscCode">
+        </div>
+    </div>
+
+    <!-- Save Button -->
+    <div class="text-center mt-4">
+        <button class="btn btn-danger btn-lg" @onclick="SaveProfile">Save</button>
+    </div>
+</div>
+<style>
+    .container {
+        width: 100%;
+        margin: auto;
+    }
+</style>
+@code {
+    private string email = "aashifa@gmail.com";
+    private string bankAccountNumber = "204356XXXXXX";
+    private string accountHolderName = "Abhiraj Sisodiya";
+    private string ifscCode = "SBIN00428";
+
+    private List<Business> businesses = new()
+    {
+        new Business { Name = "The Ivy East", ImageUrl = "images/femalebackground.png" },
+        new Business { Name = "The School Yard", ImageUrl = "images/femalebackground.png" },
+        new Business { Name = "The Bank House", ImageUrl = "images/femalebackground.png" }
+    };
+
+    private void ChangePassword()
+    {
+        // Logic to change the password
+    }
+
+    private void SaveProfile()
+    {
+        // Login logic here
+        NavManager.NavigateTo("/home");
+    }
+
+    public class Business
+    {
+        public string Name { get; set; }
+        public string ImageUrl { get; set; }
+    }
+}

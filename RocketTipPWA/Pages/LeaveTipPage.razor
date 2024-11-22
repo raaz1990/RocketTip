@@ -1,0 +1,235 @@
+﻿@page "/LeaveTipPage"
+@inject NavigationManager Navigation
+
+<style>
+    /* General Styles */
+    .leave-tip-page {
+        padding: 20px;
+        background-color: white;
+    }
+
+    /* Header Section */
+    .header-section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 25px;
+    }
+
+        .header-section img {
+            width: 100px;
+            margin-left: 10px;
+        }
+
+    /* Bill Section */
+    .bill-section,
+    .custom-tip-section,
+    .split-tip-section {
+        margin-bottom: 25px;
+    }
+
+        .bill-section label,
+        .custom-tip-section label,
+        .split-tip-section label {
+            font-size: 18px;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+    /* Input and Button Layout */
+    .input-grid {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        grid-gap: 10px;
+        align-items: center;
+    }
+
+        .input-grid input {
+            padding: 10px;
+            font-size: 18px;
+            width: 100%;
+            border: 1px solid gray;
+            border-radius: 5px;
+        }
+
+        .input-grid button {
+            padding: 10px;
+            background-color: #FF6B6B;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 12px;
+        }
+
+    /* Percentage Buttons */
+    .percentage-buttons {
+        display: flex;
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+        .percentage-buttons button {
+            background-color: white;
+            color: black;
+            border: 1px solid black;
+            border-radius: 5px;
+            padding: 10px;
+            width: 100px;
+            height: 55px;
+        }
+
+    /* Tip Amount Section */
+    .tip-amount {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+        .tip-amount label {
+            font-size: 16px;
+            display: block;
+        }
+
+        .tip-amount h3 {
+            font-size: 36px;
+            font-weight: bold;
+            color: black;
+        }
+
+    /* Reward Button */
+    .reward-button {
+        margin-top: 30px;
+        text-align: center;
+    }
+
+        .reward-button button {
+            background-color: #FF6B6B;
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 18px;
+            width: 100%;
+            border: none;
+        }
+
+    /* Bottom Tab Bar */
+    .bottom-tab-bar {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background-color: #2196F3;
+        display: flex;
+        justify-content: space-around;
+        padding: 10px;
+    }
+
+        .bottom-tab-bar .tab-icon {
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+        }
+
+        .bottom-tab-bar .tab-label {
+            color: white;
+            font-size: 12px;
+        }
+</style>
+
+<!-- Main Container -->
+<div class="leave-tip-page">
+    <!-- Header -->
+    <div class="header-section">
+        <label>Thank you for using </label>
+        <img src="images/rockettipslogo.png" alt="Rocket Tips Logo" />
+    </div>
+
+    <!-- Total Bill Section -->
+    <div class="bill-section">
+        <label for="totalBill">Total Bill</label>
+        <div class="input-grid">
+            <input id="totalBill" @bind="TotalBill" placeholder="Enter tip Amount" type="number" />
+            <button @onclick="OnChangeCurrency">Change Currency</button>
+        </div>
+    </div>
+
+    <!-- Tip Percentage Buttons -->
+    <div class="percentage-buttons">
+        <button @onclick="() => OnPercentageClicked(10)">10%</button>
+        <button @onclick="() => OnPercentageClicked(15)">15%</button>
+        <button @onclick="() => OnPercentageClicked(20)">20%</button>
+    </div>
+
+    <!-- Custom Tip Section -->
+    <div class="custom-tip-section">
+        <label for="customTip">Custom Tip</label>
+        <div class="input-grid">
+            <input id="customTip" @bind="CustomTip" placeholder="Enter Custom Tip" type="number" />
+            <button @onclick="OnChangeCurrency">Change Currency</button>
+        </div>
+    </div>
+
+    <!-- Split the Tip Section -->
+    <div class="split-tip-section">
+        <label for="splitTip">Split the Tip?</label>
+        <div class="input-grid">
+            <input id="splitTip" @bind="SplitTip" placeholder="Number of people" type="number" />
+            <label>people</label>
+        </div>
+    </div>
+
+    <!-- Tip Amount Section -->
+    <div class="tip-amount">
+        <label>Your Tip (Including Fee of $0.50)</label>
+        <h3>@TipAmount</h3>
+    </div>
+
+    <!-- Reward Button -->
+    <div class="reward-button">
+        <button @onclick="OnClaimTapped">Reward Your Wait Staff</button>
+    </div>
+</div>
+
+@* <!-- Bottom Tab Bar -->
+<div class="bottom-tab-bar">
+    <div class="tab-icon">🏠</div>
+    <div class="tab-icon">💸</div>
+    <div class="tab-icon">🔑</div>
+    <div class="tab-label">Home</div>
+    <div class="tab-label">Tips</div>
+    <div class="tab-label">Account</div>
+</div> *@
+
+@code {
+    // Variables to store input values
+    private decimal TotalBill { get; set; }
+    private decimal CustomTip { get; set; }
+    private int SplitTip { get; set; }
+    private decimal TipAmount => CalculateTipAmount();
+
+    // Method to handle percentage clicks
+    private void OnPercentageClicked(int percentage)
+    {
+        CustomTip = TotalBill * percentage / 100;
+    }
+
+    // Method to handle currency change (Example)
+    private void OnChangeCurrency()
+    {
+        // Currency change logic here
+    }
+
+    // Method to calculate tip amount (including fee)
+    private decimal CalculateTipAmount()
+    {
+        decimal fee = 0.50m; // Example fee
+        return CustomTip + fee;
+    }
+
+    // Method for reward button
+    private void OnClaimTapped()
+    {
+        // Claim logic, for example, navigate to a different page
+        Navigation.NavigateTo("/thank-you");
+    }
+}
+

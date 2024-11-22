@@ -1,7 +1,143 @@
 ﻿@page "/home"
+@inject NavigationManager NavManager
 
-<PageTitle>Home</PageTitle>
+<style>
+    .container {
+        width: 100% !important;
+        margin: auto;
+    }
+    .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
 
-<h1>Hello, world!</h1>
+    .icon {
+        width: 30px;
+        height: 30px;
+    }
 
-Welcome to your new app.
+    .title {
+        font-size: 24px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .title-part1 {
+        color: black;
+    }
+
+    .title-part2 {
+        color: #2196F3;
+    }
+
+    .tip-section {
+        position: relative;
+        margin: 20px 0;
+        border-radius: 15px;
+        overflow: hidden;
+    }
+
+    .banner {
+        width: 100%;
+        height: auto;
+    }
+
+    .tip-info {
+        position: absolute;
+        top: 20%;
+        left: 70%;
+        color: white;
+    }
+
+    .tip-info2 {
+        position: absolute;
+        top: 20%;
+        left: 10%;
+        color: white;
+    }
+
+    .tip-info label {
+        font-size: 16px;
+    }
+
+    .tip-info h2 {
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    .transaction-button, .refer-button {
+        background-color: transparent;
+        color: white;
+        font-weight: bold;
+        border: none;
+        cursor: pointer;
+    }
+
+    .transaction-button {
+        font-size: 10px;
+    }
+
+    .new-tip-label {
+        font-size: 12px;
+        font-weight: bold;
+        color: white;
+    }
+
+    .bottom-tab-bar {
+        background-color: #f0f0f0; /* Adjust as needed */
+        padding: 10px;
+        text-align: center;
+    }
+</style>
+<div class="container">
+        <div class="header">
+            <img src="images/menu_icon.png" alt="Menu Icon" class="icon" onclick="openMenu()">
+            <h1 class="title">
+                <span class="title-part1">Rocket.</span>
+                <span class="title-part2">Tips</span>
+            </h1>
+            <img src="images/userimage.png" alt="User  Image" class="icon user-icon">
+        </div>
+
+        <!-- Total Tips Section -->
+        <div class="tip-section total-tips">
+            <img src="images/homepage_banner2.png" alt="Total Tips Banner" class="banner">
+            <div class="tip-info">
+                <label>Total Tips</label>
+                <h2>$124.57</h2>
+                <button class="transaction-button" @onclick="OnTransactions">All Transactions →</button>
+            </div>
+        </div>
+
+        <!-- New Tip Section -->
+        <div class="tip-section new-tip">
+            <img src="images/homepage_banner1.png" alt="New Tip Banner" class="banner">
+            <div class="tip-info2">
+                <label class="new-tip-label">New Tip →</label>
+            </div>
+        </div>
+
+        <!-- Refer a Friend Section -->
+        <div class="tip-section refer-friend">
+            <img src="images/homepage_banner3.png" alt="Refer a Friend Banner" class="banner">
+            <div class="tip-info">
+                <label>Share the love and introduce friends and colleagues</label>
+            <button class="refer-button" @onclick="OnRefer">Refer a Friend →</button>
+            </div>
+        </div>
+
+
+</div>
+@code {
+    private void OnTransactions()
+    {
+        // Login logic here
+        NavManager.NavigateTo("/TipsPage");
+    }
+    private void OnRefer()
+    {
+        // Login logic here
+        NavManager.NavigateTo("/newtip");
+    }
+}

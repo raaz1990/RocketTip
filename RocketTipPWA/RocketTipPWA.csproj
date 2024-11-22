@@ -9,7 +9,6 @@
 
   <ItemGroup>
     <Content Remove="Layout\LoginLayout.razor" />
-    <Content Remove="Pages\Register.razor" />
   </ItemGroup>
 
   <ItemGroup>
@@ -34,16 +33,25 @@
 
   <ItemGroup>
     <_ContentIncludedByDefault Remove="Layout\LoginLayout.razor" />
+    <_ContentIncludedByDefault Remove="Pages\ForgotPasswordPage.razor" />
     <_ContentIncludedByDefault Remove="Pages\Register.razor" />
+    <_ContentIncludedByDefault Remove="Pages\WaitStaffProfilePage.razor" />
   </ItemGroup>
 
   <ItemGroup>
     <None Include="Layout\LoginLayout.razor" />
-    <None Include="Pages\Register.razor" />
   </ItemGroup>
 
   <ItemGroup>
     <UpToDateCheckInput Remove="Pages\Register.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Pages\ForgotPasswordPage.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Pages\WaitStaffProfilePage.razor" />
   </ItemGroup>
 
 </Project>

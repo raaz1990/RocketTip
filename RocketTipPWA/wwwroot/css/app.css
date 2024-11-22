@@ -155,6 +155,11 @@ code {
         color: #ff4d6d;
         text-decoration: none;
     }
+.forgotpasswordtext {
+    text-align: left;
+    color: gray;
+}
+
 
 .login-button {
     width: 100%;
@@ -197,3 +202,7 @@ code {
         color: #ff4d6d;
         text-decoration: none;
     }
+/*.container {
+    max-width: 40%;
+    margin: auto;
+}*/

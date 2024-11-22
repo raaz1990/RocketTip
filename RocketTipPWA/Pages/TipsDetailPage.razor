@@ -1,0 +1,292 @@
+﻿@page "/tipsdetail"
+@inject NavigationManager Navigation
+
+<style>
+    /* General Styles */
+    .tips-detail-page {
+        padding: 20px;
+        background-color: white;
+    }
+
+    /* Tip Received Section */
+    .tip-received-section {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+        .tip-received-section h2 {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .tip-received-section p {
+            font-size: 14px;
+        }
+
+        .tip-received-section h3 {
+            font-size: 60px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+    /* Associate Tip Section */
+    .associate-tip-section {
+        margin-bottom: 30px;
+    }
+
+        .associate-tip-section h4 {
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+    .image-selection {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 20px;
+    }
+
+    .image-frame {
+        text-align: center;
+        width: 100px;
+        height: 100px;
+        border-radius: 10px;
+        border: 1px solid #f3f3f3;
+        padding: 10px;
+    }
+
+        .image-frame img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .image-frame p {
+            font-size: 12px;
+            margin-top: 10px;
+        }
+
+    /* Share Your Tip Section */
+    .share-your-tip-section {
+        margin-bottom: 30px;
+    }
+
+        .share-your-tip-section h4 {
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+    /* User Tip Selection */
+    .user-tip-selection {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .user {
+        text-align: center;
+    }
+
+        .user img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+
+        .user p {
+            font-size: 12px;
+            margin-top: 5px;
+        }
+
+    .percentage-buttons {
+        display: flex;
+        gap: 10px;
+    }
+
+        .percentage-buttons button {
+            background-color: white;
+            color: black;
+            border: 1px solid black;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+    /* Allocated Tip Section */
+    .allocated-tip {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+        .allocated-tip .tip-amount {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+        }
+
+        .allocated-tip strong {
+            font-weight: bold;
+            margin-left: 10px;
+        }
+
+    /* Claim Button */
+    .claim-button {
+        text-align: center;
+        margin-top: 30px;
+    }
+
+        .claim-button button {
+            background-color: #FF6B6B;
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 18px;
+            width: 100%;
+            cursor: pointer;
+        }
+
+    /* Bottom Tab Bar */
+    .bottom-tab-bar {
+        display: flex;
+        justify-content: space-around;
+        background-color: #2196F3;
+        padding: 10px;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+
+        .bottom-tab-bar .tab-icon {
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+        }
+
+        .bottom-tab-bar .tab-label {
+            color: white;
+            font-size: 12px;
+        }
+
+    p {
+        margin-top: 15px
+    }
+</style>
+
+<!-- Main Container -->
+<div class="tips-detail-page">
+
+    <!-- Tip Received Section -->
+    <div class="tip-received-section">
+        <h2>Tip Received</h2>
+        <p>From Oct 14, 2024, 10:24AM</p>
+        <h3>$14.57</h3>
+    </div>
+
+    <!-- Associate Tip To Section -->
+    <div class="associate-tip-section">
+        <h4>Associate Tip To (Optional)</h4>
+        <div class="image-selection">
+            <div class="image-frame">
+                <img src="femalebackground.png" alt="The Ivy East" />
+                <p>The Ivy East</p>
+            </div>
+            <div class="image-frame">
+                <img src="femalebackground.png" alt="The School Yard" />
+                <p>The School Yard</p>
+            </div>
+            <div class="image-frame">
+                <img src="femalebackground.png" alt="The Bank House" />
+                <p>The Bank House</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Share Your Tip Section -->
+    <div class="share-your-tip-section">
+        <h4>Share Your Tip</h4>
+
+        <!-- User Tip Selection -->
+        <div class="user-tip-selection">
+            <!-- Yara's Tip Selection -->
+            <div class="user">
+                <img src="userimage.png" alt="Yara Khalil" />
+                <p>Yara Khalil</p>
+                <div class="percentage-buttons">
+                    <button @onclick="OnYaraTip10">10%</button>
+                    <button @onclick="OnYaraTip15">15%</button>
+                    <button @onclick="OnYaraTip20">20%</button>
+                </div>
+            </div>
+
+            <!-- Reem's Tip Selection -->
+            <div class="user">
+                <img src="userimage.png" alt="Reem Khaled" />
+                <p>Reem Khaled</p>
+                <div class="percentage-buttons">
+                    <button @onclick="OnReemTip10">10%</button>
+                    <button @onclick="OnReemTip15">15%</button>
+                    <button @onclick="OnReemTip20">20%</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Allocated and Your Tip Section -->
+    <div class="allocated-tip">
+        <div class="tip-amount">
+            <p>Allocated</p><strong>$1.46</strong>
+        </div>
+        <div class="tip-amount">
+            <p>Your Tip</p><strong>$13.11</strong>
+        </div>
+    </div>
+
+    <!-- Split and Claim Button -->
+    <div class="claim-button">
+        <button @onclick="OnClaimTapped">Split and Claim Your Tip</button>
+    </div>
+</div>
+
+@code {
+    private void OnYaraTip10()
+    {
+        OnPercentageClicked(10, "Yara");
+    }
+
+    private void OnYaraTip15()
+    {
+        OnPercentageClicked(15, "Yara");
+    }
+
+    private void OnYaraTip20()
+    {
+        OnPercentageClicked(20, "Yara");
+    }
+
+    private void OnReemTip10()
+    {
+        OnPercentageClicked(10, "Reem");
+    }
+
+    private void OnReemTip15()
+    {
+        OnPercentageClicked(15, "Reem");
+    }
+
+    private void OnReemTip20()
+    {
+        OnPercentageClicked(20, "Reem");
+    }
+
+    private void OnPercentageClicked(int percentage, string user)
+    {
+        // Logic to calculate tip amount
+    }
+
+    private void OnClaimTapped()
+    {
+        Navigation.NavigateTo("/LeaveTipPage");
+    }
+}

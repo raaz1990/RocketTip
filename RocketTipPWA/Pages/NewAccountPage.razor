@@ -1,0 +1,110 @@
+﻿@page "/NewAccountPage"
+@inject NavigationManager NavManager
+<style>
+    body {
+        font-family: 'Montserrat', sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        display: grid;
+        grid-template-rows: auto auto auto 1fr;
+        padding: 30px 10px;
+        max-width: 400px; /* Adjust width as needed */
+        margin: auto; /* Center the container */
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .user-image {
+        height: 95px;
+        width: 95px;
+        border-radius: 50%; /* Optional: make the image circular */
+        margin: 0 auto; /* Center the image */
+    }
+
+    .title {
+        font-size: 18px;
+        font-weight: bold;
+        color: black;
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    .agreement {
+        margin: 20px 0;
+    }
+
+    .question {
+        font-size: 14px;
+        font-weight: normal;
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .option {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+        .option input {
+            margin-right: 10px;
+        }
+
+    .save-button {
+        background-color: #F83758;
+        color: white;
+        font-weight: bold;
+        border: none;
+        border-radius: 5px;
+        height: 50px;
+        width: 100%;
+        cursor: pointer;
+    }
+
+        .save-button:hover {
+            background-color: #d6283b; /* Darker shade for hover effect */
+        }
+</style>
+<div class="container">
+    <!-- Image -->
+    <img src="images/userimage.png" alt="User  Image" class="user-image">
+
+    <!-- Title -->
+    <h1 class="title">Welcome Ashley 👋</h1>
+
+    <!-- Agreement Text -->
+    <div class="agreement">
+        <label class="question">Which Role Best Describes You?</label>
+
+        <div class="option">
+            <input type="checkbox" id="role1" checked>
+            <label for="role1">I am rewarded by tips e.g. wait staff</label>
+        </div>
+
+        <div class="option">
+            <input type="checkbox" id="role2">
+            <label for="role2">I am the manager of a business with staff who are rewarded with tips</label>
+        </div>
+
+        <div class="option">
+            <input type="checkbox" id="role3">
+            <label for="role3">I am a customer who rewards good service with tips</label>
+        </div>
+    </div>
+
+    <!-- Register Button -->
+    <button class="save-button" @onclick="HandleSave">Save</button>
+</div>
+
+@code{
+    private void HandleSave()
+    {
+        // Login logic here
+        NavManager.NavigateTo("/WaitStaffProfile");
+    }
+}
