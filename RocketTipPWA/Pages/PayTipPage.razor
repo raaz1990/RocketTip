@@ -1,0 +1,92 @@
+﻿@page "/paytip"
+<style>
+    .paytip-page {
+        padding: 20px;
+    }
+
+    .header {
+        margin-bottom: 30px;
+    }
+
+    .logo {
+        max-height: 200px;
+    }
+
+    .tip-section {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 30px;
+    }
+
+    .tip-labels {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .tip-text {
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    .tip-input {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .tip-amount {
+        font-size: 18px;
+        padding: 5px;
+        width: 200px;
+    }
+
+    .payment-icons, .card-icons {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+
+    .payment-icon, .card-icon {
+        height: 80px;
+        margin: 0 10px;
+    }
+
+</style>
+<PageTitle>PayTipPage</PageTitle>
+
+<main class="paytip-page">
+    <div class="content">
+        <!-- Header -->
+        <div class="header text-center">
+            <img src="images/rockettipslogowithroce.png" alt="Rocket Tips Logo" class="logo" />
+        </div>
+
+        <!-- Total Bill Section -->
+        <div class="tip-section">
+            <div class="tip-labels">
+                <label class="tip-text">Your Tip</label>
+                <label class="tip-text">(including fee)</label>
+            </div>
+            <div class="tip-input">
+                <input type="number" class="tip-amount" placeholder="Enter tip Amount" />
+            </div>
+        </div>
+
+        <!-- Custom Tip Section -->
+        <div class="payment-icons text-center">
+            <img src="images/ipay_icon.png" alt="iPay" class="payment-icon" />
+            <img src="images/gpay_icon.png" alt="Google Pay" class="payment-icon" />
+        </div>
+
+        <div class="card-icons text-center">
+            <img src="images/card_1.png" alt="Card 1" class="card-icon" />
+            <img src="images/card_2.png" alt="Card 2" class="card-icon" />
+        </div>
+    </div>
+
+    <!-- Bottom Tab Bar -->
+    <BottomTabBar />
+</main>
+
+@code {
+    // Add any necessary C# code or logic here if needed for interaction
+}

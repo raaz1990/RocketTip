@@ -82,6 +82,7 @@
         justify-content: space-between;
         align-items: center;
         margin-top: 20px;
+        flex-direction: column;
     }
 
     .user {
@@ -138,14 +139,17 @@
     }
 
         .claim-button button {
-            background-color: #FF6B6B;
+            background-color: #FF3D58;
             color: white;
-            padding: 15px;
-            border-radius: 10px;
-            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
             width: 100%;
+            height: 50px;
             cursor: pointer;
+            margin-top: 20px;
         }
+        
 
     /* Bottom Tab Bar */
     .bottom-tab-bar {
@@ -189,15 +193,15 @@
         <h4>Associate Tip To (Optional)</h4>
         <div class="image-selection">
             <div class="image-frame">
-                <img src="femalebackground.png" alt="The Ivy East" />
+                <img src="images/femalebackground.png" alt="The Ivy East" />
                 <p>The Ivy East</p>
             </div>
             <div class="image-frame">
-                <img src="femalebackground.png" alt="The School Yard" />
+                <img src="images/femalebackground.png" alt="The School Yard" />
                 <p>The School Yard</p>
             </div>
             <div class="image-frame">
-                <img src="femalebackground.png" alt="The Bank House" />
+                <img src="images/femalebackground.png" alt="The Bank House" />
                 <p>The Bank House</p>
             </div>
         </div>
@@ -211,7 +215,7 @@
         <div class="user-tip-selection">
             <!-- Yara's Tip Selection -->
             <div class="user">
-                <img src="userimage.png" alt="Yara Khalil" />
+                <img src="images/userimage.png" alt="Yara Khalil" />
                 <p>Yara Khalil</p>
                 <div class="percentage-buttons">
                     <button @onclick="OnYaraTip10">10%</button>
@@ -222,7 +226,7 @@
 
             <!-- Reem's Tip Selection -->
             <div class="user">
-                <img src="userimage.png" alt="Reem Khaled" />
+                <img src="images/userimage.png" alt="Reem Khaled" />
                 <p>Reem Khaled</p>
                 <div class="percentage-buttons">
                     <button @onclick="OnReemTip10">10%</button>

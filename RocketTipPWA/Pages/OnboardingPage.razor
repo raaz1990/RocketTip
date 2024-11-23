@@ -1,0 +1,41 @@
+﻿@page "/OnboardingPage"
+@inject NavigationManager NavManager
+
+<PageTitle>OnboardingPage</PageTitle>
+<style>
+    .onboarding-page {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-image: url(/images/femalebackground.png);
+        background-size: cover;
+        background-position: center;
+        width: 100vw;
+        height: 100vh;
+        background-repeat: no-repeat;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+    }
+
+</style>
+<div class="onboarding-page">
+    <div class="content">
+        <h1 class="title">Rewarding hard working service staff</h1>
+        <button class="login-button" @onclick="Started_Clicked">Get Started</button>
+    </div>
+</div>
+
+@code {   
+    private void Started_Clicked()
+    {
+        NavManager.NavigateTo("Login");
+    } 
+}
+

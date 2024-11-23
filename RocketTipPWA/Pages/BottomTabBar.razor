@@ -1,0 +1,134 @@
+﻿@using Microsoft.AspNetCore.Components
+@inject NavigationManager NavManager
+
+<div class="bottom-tab-bar">
+    <!-- Home Tab -->
+    <div class="tab" @onclick="OnHomeTapped">
+        <img src="images/home_icon.png" alt="Home" class="icon" />
+        <p class="tab-label">Home</p>
+    </div>
+
+    <!-- Refer Tab -->
+    <div class="tab" @onclick="OnReferTapped">
+        <img src="images/heart_icon.png" alt="Refer" class="icon" />
+        <p class="tab-label">Refer</p>
+    </div>
+
+    <!-- New Tip Tab (Center) -->
+    <div class="new-tip-tab" @onclick="OnNewTipTapped">
+        <div class="circle">
+            <img src="images/roket_icon.png" alt="New Tip" class="new-tip-icon" />
+        </div>
+        <p class="tab-label">New Tip</p>
+    </div>
+
+    <!-- Transactions Tab -->
+    <div class="tab" @onclick="OnTransactionsTapped">
+        <img src="images/dollar_icon.png" alt="Transactions" class="icon" />
+        <p class="tab-label">Transactions</p>
+    </div>
+
+    <!-- Settings Tab -->
+    <div class="tab" @onclick="OnSettingsTapped">
+        <img src="images/setting_icon.png" alt="Settings" class="icon" />
+        <p class="tab-label">Settings</p>
+    </div>
+</div>
+<style>
+    .bottom-tab-bar {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        background-color: white;
+        padding: 10px;
+        height: 80px;
+        align-items: center;
+        justify-items: center;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+    }
+
+    .tab {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        text-align: center;
+    }
+
+    .icon {
+        width: 24px;
+        height: 24px;
+    }
+
+    .tab-label {
+        font-size: 10px;
+        margin-top: 5px;
+    }
+
+    .new-tip-tab {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        z-index: 2;
+    }
+
+        .new-tip-tab .circle {
+            margin-top: -18px;
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            background-color: #efefef;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+    .new-tip-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .new-tip-tab p {
+        font-size: 10px;
+        color: #2196F3;
+        text-align: center;
+        margin-top: 5px;
+    }
+
+</style>
+@code {
+    private void OnHomeTapped()
+    {
+        // Handle home tab click
+        NavManager.NavigateTo("Home");
+    }
+
+    private void OnReferTapped()
+    {
+        // Handle refer tab click
+        NavManager.NavigateTo("Home");
+    }
+
+    private void OnNewTipTapped()
+    {
+        // Handle new tip tab click
+        NavManager.NavigateTo("newtip");
+    }
+
+    private void OnTransactionsTapped()
+    {
+        // Handle transactions tab click
+        NavManager.NavigateTo("TipsPage");
+    }
+
+    private void OnSettingsTapped()
+    {
+        // Handle settings tab click
+        NavManager.NavigateTo("WaitStaffProfile");
+    }
+}
