@@ -1,42 +1,84 @@
 ﻿@using Microsoft.AspNetCore.Components.Routing
 @using RocketTipPWA.Pages
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<style>
+    .icon2{
+        width:50px;
+        height: 50px;
+    }
+    .content {
+        padding-top: 0rem;
+    }
 
-<div class="top-row ps-3 navbar navbar-dark">
+    .px-4 {
+        padding-right: 0rem !important; 
+         padding-left: 0rem !important;
+    }
+
+    .nav-item a {
+        color: #000000 !important;
+    }
+
+    ..nav-item a.active{
+        color: #2196F3 !important;
+    }
+
+    .header {
+        width:100%;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+</style>
+<div class="top-row ps-3 navbar navbar-dark" style="background-color: white;">
     <div class="container-fluid">
+        <div class="header">
+            <button title="Navigation menu" style="background-color:#bdbdbd" class="navbar-toggler" @onclick="ToggleNavMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <h1 class="title">
+                <span class="title-part1">Rocket.</span>
+                <span class="title-part2">Tips</span>
+            </h1>
+            <img src="images/userimage.png" alt="User  Image" class="icon2 user-icon">
+        </div>@* 
         <a class="navbar-brand" href="/">RocketTipPWA</a>
         <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
             <span class="navbar-toggler-icon"></span>
-        </button>
+        </button> *@
     </div>
 </div>
 
 <div class="@NavMenuCssClass nav-scrollable" @onclick="ToggleNavMenu">
     <nav class="flex-column">
-        <div class="nav-item px-3">
-            <NavLink href="/" class="nav-link" Match="NavLinkMatch.All">
-                <span class="oi oi-lock-locked" aria-hidden="true"></span> Login
-            </NavLink>
-        </div>
+        
         <div class="nav-item px-3">
             <NavLink class="nav-link" href="/home" Match="NavLinkMatch.All">
-                <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> Home
+                <img src="images/home_icon.png" alt="Home" class="icon" style="margin-right:40px" /> Home
             </NavLink>
         </div>
         <div class="nav-item px-3">
-            <NavLink class="nav-link" href="/counter">
-                <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Counter
+            <NavLink class="nav-link" href="/home">
+                <img src="images/heart_icon.png" alt="Refer" class="icon" style="margin-right:40px" /> Refer
             </NavLink>
         </div>
         <div class="nav-item px-3">
-            <NavLink class="nav-link" href="/weather">
-                <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Weather
+            <NavLink class="nav-link" href="/newtip">
+                <img src="images/roket_icon.png" alt="New Tip" class="icon" style="margin-right:40px" /> New Tip
+            </NavLink>
+        </div> 
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="/TipsPage">
+                <img src="images/dollar_icon.png" alt="Transactions" class="icon" style="margin-right:40px" /> Transactions
             </NavLink>
         </div>
         <div class="nav-item px-3">
-            <NavLink class="nav-link" href="/Register" Match="NavLinkMatch.All">
-                <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Register
+            <NavLink class="nav-link" href="/WaitStaffProfile">
+                <img src="images/setting_icon.png" alt="Settings" class="icon" style="margin-right:40px" /> Settings
             </NavLink>
         </div>
+        
     </nav>
 </div>
 

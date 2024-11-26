@@ -1,6 +1,8 @@
 ﻿@page "/newtip"
 @inject NavigationManager Navigation
 
+@inherits LayoutComponentBase
+<NavMenu />
 <PageTitle>New Tip</PageTitle>
 <style>
     .new-tip-page {
@@ -128,15 +130,7 @@
 <div class="new-tip-page">
     <!-- Scrollable Content -->
     <div class="scrollable-content">
-        <!-- Header -->
-        <div class="header">
-            <img src="images/menu_icon.png" alt="Menu" class="icon" @onclick="OnMenuClicked" />
-            <h1>
-                <span class="rocket">Rocket.</span>
-                <span class="tips">Tips</span>
-            </h1>
-            <img src="images/userimage.png" alt="User" class="user-icon" />
-        </div>
+       
 
         <!-- Total Tips Section -->
         <div class="total-tips-section">
@@ -163,6 +157,7 @@
 
 </div>
 
+<BottomTabBar />
 @code {
     private decimal tipAmount { get; set; }
 
