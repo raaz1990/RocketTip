@@ -7,15 +7,16 @@
     xmlns:local="clr-namespace:RocketTip" xmlns:pages="clr-namespace:RocketTip.Pages"
     Title="RocketTip" Shell.FlyoutBehavior="Flyout"
      >
-    <ShellContent ContentTemplate="{DataTemplate pages:OnboardingPage}" Shell.FlyoutBehavior="Disabled" Shell.FlyoutItemIsVisible="False"/>
-    <!--<Shell.Behaviors>
+    <Shell.Behaviors>
         <toolkit:StatusBarBehavior StatusBarColor="#F83758"/>
-    </Shell.Behaviors>-->
+    </Shell.Behaviors>
+    <ShellContent ContentTemplate="{DataTemplate pages:OnboardingPage}" Shell.FlyoutBehavior="Disabled" Shell.FlyoutItemIsVisible="False"/>
+    
     <ShellItem Route="HomePage" Title="Home" Icon="home_icon">
         <ShellContent ContentTemplate="{DataTemplate pages:HomePage}" />
     </ShellItem>
-    <ShellItem Route="HomePage" Title="Refer" Icon="heart_icon">
-        <ShellContent  ContentTemplate="{DataTemplate pages:HomePage}" />
+    <ShellItem Route="QrCodeScannerPage" Title="Refer" Icon="heart_icon">
+        <ShellContent  ContentTemplate="{DataTemplate pages:QrCodeScannerPage}" />
     </ShellItem>
     <ShellItem Route="NewTipPage" Title="New Tip" Icon="roket_icon">
         <ShellContent ContentTemplate="{DataTemplate pages:NewTipPage}" />

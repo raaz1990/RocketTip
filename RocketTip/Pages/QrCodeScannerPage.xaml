@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RocketTip.Pages.QrCodeScannerPage"
+             xmlns:zxing="clr-namespace:ZXing.Net.Maui.Controls;assembly=ZXing.Net.MAUI.Controls"
+             Title="QR Code Scanner">
+    <Grid RowDefinitions="1*,3*,1*">
+
+        <!-- Camera Barcode Reader View for scanning QR codes -->
+        <zxing:CameraBarcodeReaderView
+            Grid.Row="0" Grid.RowSpan="3"
+            x:Name="barcodeView"
+            BarcodesDetected="BarcodesDetected"
+             />
+
+        <!-- Top Label -->
+        <Grid Grid.Row="0" BackgroundColor="#aa000000">
+            <Label Text="Scan Rocket.Tips QR Code"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   TextColor="White"
+                   FontSize="18"
+                   FontAttributes="Bold" />
+        </Grid>
+
+        <!-- Bottom Control Panel -->
+        <Grid Grid.Row="3" BackgroundColor="#aa000000" Padding="20" ColumnDefinitions="Auto,*,Auto">
+
+            <!-- Switch Camera Button -->
+            <Button Text="🔄️" Grid.Column="0" BackgroundColor="#aa000000" CornerRadius="8" BorderColor="Black" Clicked="SwitchCameraButton_Clicked" />
+
+            <!-- Torch Button -->
+            <Button Text="💡" Grid.Column="2" BackgroundColor="#aa000000" CornerRadius="8" BorderColor="Black" Clicked="TorchButton_Clicked" />
+        </Grid>
+
+    </Grid>
+</ContentPage>
