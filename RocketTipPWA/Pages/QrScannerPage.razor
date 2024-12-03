@@ -1,0 +1,44 @@
+﻿@page "/QrScannerPage"
+<NavMenu />
+<h1 style="text-align: center; font-size: 2rem; color: #4A90E2; font-family: 'Arial', sans-serif;">
+    Scan Rocket.Tips QR Code
+</h1>
+
+<p style="text-align: center; font-size: 1.1rem; color: #555; max-width: 600px; margin: 0 auto;">
+    Point your camera at a QR code to scan. The result will appear below.
+</p>
+
+<div style="text-align: center; margin: 20px 0;">
+    <video id="qr-video" style="width: 100%; max-width: 500px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);"></video>
+</div>
+
+<p id="qr-result" style="text-align: center; font-size: 1.2rem; color: #28A745; font-weight: bold;">
+    QR Code result will appear here
+</p>
+
+<script src="https://cdn.jsdelivr.net/npm/qr-scanner@1.4.0/qr-scanner.min.js"></script>
+<script>
+    // Make sure the browser supports the QR scanner library
+    if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+        const videoElem = document.getElementById('qr-video');
+        const resultElem = document.getElementById('qr-result');
+
+        // Initialize QR Scanner
+        const qrScanner = new QrScanner(videoElem, (result) => {
+            resultElem.textContent = `Scanned QR Code: ${result}`;
+            resultElem.style.color = '#28A745'; // Change color to green after successful scan
+            qrScanner.stop(); // Stop scanning after successful result (optional)
+        });
+
+        // Start the camera
+        qrScanner.start()
+            .catch(err => {
+                console.error('Error starting QR scanner:', err);
+                resultElem.textContent = 'Error accessing camera. Please grant permission.';
+                resultElem.style.color = '#FF0000'; // Set error color to red
+            });
+    } else {
+        alert('Your browser does not support QR code scanning!');
+    }
+</script>
+<BottomTabBar />

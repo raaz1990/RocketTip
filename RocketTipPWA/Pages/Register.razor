@@ -1,6 +1,11 @@
 ﻿@page "/Register"
 @inject NavigationManager NavManager
 
+<style>
+    .error-message {
+        color: red;
+    }
+</style>
 <div class="login-container">
     <h1>Create Your Account</h1>
 
@@ -11,6 +16,10 @@
         </span>
         <input type="text" placeholder="Full Name" @bind="FullName" />
     </div>
+    @if (!string.IsNullOrEmpty(FullNameError))
+    {
+        <p class="error-message">@FullNameError</p>
+    }
 
     <!-- Email Input -->
     <div class="input-group">
@@ -19,6 +28,10 @@
         </span>
         <input type="email" placeholder="Email Address" @bind="Email" />
     </div>
+    @if (!string.IsNullOrEmpty(EmailError))
+    {
+        <p class="error-message">@EmailError</p>
+    }
 
     <!-- Password Input -->
     <div class="input-group">
@@ -27,6 +40,10 @@
         </span>
         <input type="password" placeholder="Password" @bind="Password" />
     </div>
+    @if (!string.IsNullOrEmpty(PasswordError))
+    {
+        <p class="error-message">@PasswordError</p>
+    }
 
     <!-- Confirm Password Input -->
     <div class="input-group">
@@ -35,6 +52,10 @@
         </span>
         <input type="password" placeholder="Confirm Password" @bind="ConfirmPassword" />
     </div>
+    @if (!string.IsNullOrEmpty(ConfirmPasswordError))
+    {
+        <p class="error-message">@ConfirmPasswordError</p>
+    }
 
     <!-- Register Button -->
     <button class="login-button" @onclick="HandleRegister">Register</button>
@@ -65,15 +86,81 @@
     private string Password { get; set; } = string.Empty;
     private string ConfirmPassword { get; set; } = string.Empty;
 
+    private string FullNameError { get; set; } = string.Empty;
+    private string EmailError { get; set; } = string.Empty;
+    private string PasswordError { get; set; } = string.Empty;
+    private string ConfirmPasswordError { get; set; } = string.Empty;
+
     private void HandleRegister()
     {
+        // Reset error messages
+        FullNameError = string.Empty;
+        EmailError = string.Empty;
+        PasswordError = string.Empty;
+        ConfirmPasswordError = string.Empty;
 
+        bool isValid = true;
 
-        NavManager.NavigateTo("NewAccountPage");
-        // Registration logic here
-        // Example: Validate fields, hash password, call API, etc.
+        // Validate Full Name
+        if (string.IsNullOrEmpty(FullName))
+        {
+            FullNameError = "Full Name is required.";
+            isValid = false;
+        }
+
+        // Validate Email
+        if (string.IsNullOrEmpty(Email))
+        {
+            EmailError = "Email is required.";
+            isValid = false;
+        }
+        else if (!IsValidEmail(Email))
+        {
+            EmailError = "Please enter a valid email address.";
+            isValid = false;
+        }
+
+        // Validate Password
+        if (string.IsNullOrEmpty(Password))
+        {
+            PasswordError = "Password is required.";
+            isValid = false;
+        }
+        else if (Password.Length < 6)
+        {
+            PasswordError = "Password must be at least 6 characters long.";
+            isValid = false;
+        }
+
+        // Validate Confirm Password
+        if (string.IsNullOrEmpty(ConfirmPassword))
+        {
+            ConfirmPasswordError = "Please confirm your password.";
+            isValid = false;
+        }
+        else if (ConfirmPassword != Password)
+        {
+            ConfirmPasswordError = "Passwords do not match.";
+            isValid = false;
+        }
+
+        // If all validations pass, navigate to the next page
+        if (isValid)
+        {
+            NavManager.NavigateTo("NewAccountPage");
+        }
     }
-      
-    [Inject]
-    private NavigationManager NavigationManager { get; set; } = default!;
+
+    private bool IsValidEmail(string email)
+    {
+        try
+        {
+            var mailAddress = new System.Net.Mail.MailAddress(email);
+            return mailAddress.Address == email;
+        }
+        catch
+        {
+            return false;
+        }
+    }
 }

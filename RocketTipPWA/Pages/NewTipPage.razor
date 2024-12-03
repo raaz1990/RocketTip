@@ -4,6 +4,7 @@
 @inherits LayoutComponentBase
 <NavMenu />
 <PageTitle>New Tip</PageTitle>
+
 <style>
     .new-tip-page {
         padding: 20px;
@@ -92,6 +93,12 @@
         background-color: transparent;
     }
 
+    .error-message {
+        color: red;
+        font-size: 12px;
+        margin-top: 10px;
+    }
+
     /* QR Code Section */
     .qr-section {
         display: flex;
@@ -126,12 +133,30 @@
             font-size: 12px;
         }
 
+    .save-button {
+        background-color: #F83758;
+        color: white;
+        font-weight: bold;
+        border: none;
+        border-radius: 5px;
+        height: 50px;
+        width: 100%;
+        cursor: pointer;
+    }
+
+        .save-button:disabled {
+            background-color: #d3d3d3;
+            cursor: not-allowed;
+        }
+
+        .save-button:hover {
+            background-color: #d6283b; /* Darker shade for hover effect */
+        }
 </style>
+
 <div class="new-tip-page">
     <!-- Scrollable Content -->
     <div class="scrollable-content">
-       
-
         <!-- Total Tips Section -->
         <div class="total-tips-section">
             <div class="info-box">
@@ -144,8 +169,13 @@
                         <span>Total Tips</span>
                         <img src="images/dollar_icon.png" alt="Dollar Icon" class="icon-small" />
                     </div>
-                    <input type="number" placeholder="Amount" @bind="tipAmount" />
+                    <input type="number" placeholder="Amount" @bind="tipAmount" @bind:event="oninput" />
                 </div>
+                <!-- Error Message -->
+                @if (!isValidAmount)
+                {
+                    <p class="error-message">Please enter a valid amount greater than 0.</p>
+                }
             </div>
 
             <!-- QR Code Section -->
@@ -154,16 +184,29 @@
             </div>
         </div>
     </div>
-
 </div>
 
 <BottomTabBar />
+
 @code {
     private decimal tipAmount { get; set; }
+
+    // Validate if tipAmount is greater than 0
+    private bool isValidAmount => tipAmount > 0;
 
     private void OnMenuClicked()
     {
         // Handle Menu Button Click
         Navigation.NavigateTo("/menu");
+    }
+
+    // Submit logic, only proceed if the amount is valid
+    private void HandleSave()
+    {
+        if (isValidAmount)
+        {
+            // Proceed with saving logic or navigation
+            Navigation.NavigateTo("/tipSummaryPage"); // Example: Navigate to the next page after saving the tip
+        }
     }
 }

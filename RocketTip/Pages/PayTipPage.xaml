@@ -2,10 +2,13 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:controls="clr-namespace:RocketTip.Controls"
-             x:Class="RocketTip.Pages.PayTipPage" Shell.FlyoutBehavior="Flyout" Shell.NavBarIsVisible="False"
+             x:Class="RocketTip.Pages.PayTipPage" 
+             Shell.FlyoutBehavior="Flyout" 
+             Shell.NavBarIsVisible="False"
              Title="PayTipPage">
     <ContentPage.Content>
         <Grid RowDefinitions="*,Auto">
+            <!-- Main Content -->
             <ScrollView Grid.Row="0">
                 <VerticalStackLayout Padding="20" Spacing="25">
 
@@ -20,20 +23,30 @@
                             <Label Grid.Row="0" Text="Your Tip" FontSize="18" FontAttributes="Bold" HorizontalOptions="Start" />
                             <Label Grid.Row="1" Text="(including fee)" FontSize="18" FontAttributes="Bold" HorizontalOptions="Start" />
                         </Grid>
-                        <HorizontalStackLayout  Spacing="10">
+                        <HorizontalStackLayout Spacing="10">
                             <Frame Padding="0" BorderColor="Gray" CornerRadius="5" HasShadow="False" VerticalOptions="Center" HorizontalOptions="End">
                                 <Entry Placeholder="Enter tip Amount" FontSize="18" HorizontalOptions="End" Keyboard="Numeric" />
                             </Frame>
                         </HorizontalStackLayout>
                     </HorizontalStackLayout>
-                    <!-- Custom Tip Section -->
+
+                    <!-- Payment Methods Section -->
                     <HorizontalStackLayout HorizontalOptions="Center" Spacing="20">
-                        <Image Source="ipay_icon.png" HeightRequest="80" />
-                        <Image Source="gpay_icon.png" HeightRequest="80" />
-                    </HorizontalStackLayout>
+                        <Image Source="ipay_icon.png" HeightRequest="80">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnPaymentMethodTapped" CommandParameter="ipay" />
+                            </Image.GestureRecognizers>
+                        </Image>
+                        <Image Source="gpay_icon.png" HeightRequest="80">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnPaymentMethodTapped" CommandParameter="gpay" />
+                            </Image.GestureRecognizers>
+                        </Image>
+
+                    </HorizontalStackLayout >
                     <HorizontalStackLayout HorizontalOptions="Center" Spacing="20">
-                        <Image Source="card_1.png" HeightRequest="60" />
-                        <Image Source="card_2.png" HeightRequest="60" />
+                    <Image Source="card_1.png" HeightRequest="60" />
+                    <Image Source="card_2.png" HeightRequest="60" />
                     </HorizontalStackLayout>
                 </VerticalStackLayout>
             </ScrollView>
@@ -41,6 +54,33 @@
             <!-- Bottom Tab Bar -->
             <controls:BottomTabBar Grid.Row="1" VerticalOptions="End" />
 
+            <!-- PopupView -->
+            <ContentView x:Name="PopupView"
+                         IsVisible="False"
+                         BackgroundColor="#80000000"
+                         VerticalOptions="FillAndExpand"
+                         HorizontalOptions="FillAndExpand">
+                <Grid VerticalOptions="Center"
+                      HorizontalOptions="Center"
+                      BackgroundColor="White"
+                      Padding="20"
+                      WidthRequest="300"
+                      HeightRequest="250">
+                    <StackLayout Spacing="15" HorizontalOptions="Center">
+                        <Image x:Name="PopupImage" Source="rockettipslogowithroce.png" HeightRequest="100" WidthRequest="100" />
+                        <Label x:Name="PopupLabel" Text="Your Tip Payment Was Successful"
+                               FontSize="Medium"
+                               FontAttributes="Bold"
+                               HorizontalOptions="Center"
+                               TextColor="#333" />
+                        <Button Text="Close"
+                                BackgroundColor="#ff5722"
+                                TextColor="White"
+                                Clicked="ClosePopup"
+                                WidthRequest="100" />
+                    </StackLayout>
+                </Grid>
+            </ContentView>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

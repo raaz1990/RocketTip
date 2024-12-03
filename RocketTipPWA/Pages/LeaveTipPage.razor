@@ -1,7 +1,14 @@
 ﻿@page "/LeaveTipPage"
 @inject NavigationManager Navigation
+@using System.ComponentModel.DataAnnotations
+
 
 <style>
+
+    .validation-errors {
+        padding-inline-start: 0px !important;
+        list-style: none !important;
+    }
     .leave-tip-page {
         padding: 20px;
         background-color: white;
@@ -141,93 +148,98 @@
         <img src="images/rockettipslogo.png" alt="Rocket Tips Logo" />
     </div>
 
-    <!-- Total Bill Section -->
-    <div class="bill-section">
-        <label for="totalBill">Total Bill</label>
-        <div class="input-grid">
-            <input id="totalBill" @bind="TotalBill" placeholder="Enter tip Amount" type="number" />
-            <button @onclick="OnChangeCurrency">Change Currency</button>
+    <EditForm Model="@leaveTipModel" OnValidSubmit="OnClaimTapped">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+
+        <!-- Total Bill Section -->
+        <div class="bill-section">
+            <label for="totalBill">Total Bill</label>
+            <div class="input-grid">
+                <InputNumber id="totalBill" @bind-Value="leaveTipModel.TotalBill" placeholder="Enter total bill" class="form-control" />
+                <button @onclick="OnChangeCurrency">Change Currency</button>
+            </div>
         </div>
-    </div>
 
-    <!-- Tip Percentage Buttons -->
-    <div class="percentage-buttons">
-        <button @onclick="() => OnPercentageClicked(10)">10%</button>
-        <button @onclick="() => OnPercentageClicked(15)">15%</button>
-        <button @onclick="() => OnPercentageClicked(20)">20%</button>
-    </div>
-
-    <!-- Custom Tip Section -->
-    <div class="custom-tip-section">
-        <label for="customTip">Custom Tip</label>
-        <div class="input-grid">
-            <input id="customTip" @bind="CustomTip" placeholder="Enter Custom Tip" type="number" />
-            <button @onclick="OnChangeCurrency">Change Currency</button>
+        <!-- Tip Percentage Buttons -->
+        <div class="percentage-buttons">
+            <button @onclick="() => OnPercentageClicked(10)">10%</button>
+            <button @onclick="() => OnPercentageClicked(15)">15%</button>
+            <button @onclick="() => OnPercentageClicked(20)">20%</button>
         </div>
-    </div>
 
-    <!-- Split the Tip Section -->
-    <div class="split-tip-section">
-        <label for="splitTip">Split the Tip?</label>
-        <div class="input-grid">
-            <input id="splitTip" @bind="SplitTip" placeholder="Number of people" type="number" />
-            <label>people</label>
+        <!-- Custom Tip Section -->
+        <div class="custom-tip-section">
+            <label for="customTip">Custom Tip</label>
+            <div class="input-grid">
+                <InputNumber id="customTip" @bind-Value="leaveTipModel.CustomTip" placeholder="Enter Custom Tip" class="form-control" />
+                <button @onclick="OnChangeCurrency">Change Currency</button>
+            </div>
         </div>
-    </div>
 
-    <!-- Tip Amount Section -->
-    <div class="tip-amount">
-        <label>Your Tip (Including Fee of $0.50)</label>
-        <h3>@TipAmount</h3>
-    </div>
+        <!-- Split the Tip Section -->
+        <div class="split-tip-section">
+            <label for="splitTip">Split the Tip?</label>
+            <div class="input-grid">
+                <InputNumber id="splitTip" @bind-Value="leaveTipModel.SplitTip" placeholder="Number of people" class="form-control" />
+                <label>people</label>
+            </div>
+        </div>
 
-    <!-- Reward Button -->
-    <div class="reward-button">
-        <button @onclick="OnClaimTapped">Reward Your Wait Staff</button>
-    </div>
+        <!-- Tip Amount Section -->
+        <div class="tip-amount">
+            <label>Your Tip (Including Fee of $0.50)</label>
+            <h3>@TipAmount</h3>
+        </div>
+
+        <!-- Reward Button -->
+        <div class="reward-button">
+            <button type="submit">Reward Your Wait Staff</button>
+        </div>
+    </EditForm>
 </div>
 
-@* <!-- Bottom Tab Bar -->
-<div class="bottom-tab-bar">
-    <div class="tab-icon">🏠</div>
-    <div class="tab-icon">💸</div>
-    <div class="tab-icon">🔑</div>
-    <div class="tab-label">Home</div>
-    <div class="tab-label">Tips</div>
-    <div class="tab-label">Account</div>
-</div> *@
-
 @code {
-    // Variables to store input values
-    private decimal TotalBill { get; set; }
-    private decimal CustomTip { get; set; }
-    private int SplitTip { get; set; }
-    private decimal TipAmount => CalculateTipAmount();
+    // Model to hold the form data
+    private LeaveTipModel leaveTipModel = new LeaveTipModel();
 
-    // Method to handle percentage clicks
+    // Method to calculate the tip amount (including fee)
+    private decimal TipAmount => leaveTipModel.CalculateTipAmount();
+
     private void OnPercentageClicked(int percentage)
     {
-        CustomTip = TotalBill * percentage / 100;
+        leaveTipModel.CustomTip = leaveTipModel.TotalBill * percentage / 100;
     }
 
-    // Method to handle currency change (Example)
     private void OnChangeCurrency()
     {
         // Currency change logic here
-    }
-
-    // Method to calculate tip amount (including fee)
-    private decimal CalculateTipAmount()
-    {
-        decimal fee = 0.50m; // Example fee
-        return CustomTip + fee;
     }
 
     // Method for reward button
     private void OnClaimTapped()
     {
         // Claim logic, for example, navigate to a different page
-        Navigation.NavigateTo("/PayTipPage");
+        Navigation.NavigateTo("/paytip");
+    }
+
+    // Model class with data annotations for validation
+    public class LeaveTipModel
+    {
+        [Required(ErrorMessage = "Total bill is required.")]
+        [Range(0.01, double.MaxValue, ErrorMessage = "Total bill must be greater than zero.")]
+        public decimal TotalBill { get; set; }
+
+        [Range(0.01, double.MaxValue, ErrorMessage = "Custom tip must be greater than zero.")]
+        public decimal CustomTip { get; set; }
+
+        [Range(1, int.MaxValue, ErrorMessage = "Please enter a valid number of people.")]
+        public int SplitTip { get; set; }
+
+        public decimal CalculateTipAmount()
+        {
+            decimal fee = 0.50m; // Example fee
+            return CustomTip + fee;
+        }
     }
 }
-

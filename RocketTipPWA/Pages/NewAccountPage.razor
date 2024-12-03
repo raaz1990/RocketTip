@@ -1,5 +1,6 @@
 ﻿@page "/NewAccountPage"
 @inject NavigationManager NavManager
+
 <style>
     body {
         font-family: 'Montserrat', sans-serif;
@@ -69,10 +70,17 @@
         .save-button:hover {
             background-color: #d6283b; /* Darker shade for hover effect */
         }
+
+    .error-message {
+        color: red;
+        font-size: 12px;
+        margin-top: 10px;
+    }
 </style>
+
 <div class="container">
     <!-- Image -->
-    <img src="images/userimage.png" alt="User  Image" class="user-image">
+    <img src="images/userimage.png" alt="User Image" class="user-image">
 
     <!-- Title -->
     <h1 class="title">Welcome Ashley 👋</h1>
@@ -82,29 +90,46 @@
         <label class="question">Which Role Best Describes You?</label>
 
         <div class="option">
-            <input type="checkbox" id="role1" checked>
+            <input type="checkbox" id="role1" @bind="Role1">
             <label for="role1">I am rewarded by tips e.g. wait staff</label>
         </div>
 
         <div class="option">
-            <input type="checkbox" id="role2">
+            <input type="checkbox" id="role2" @bind="Role2">
             <label for="role2">I am the manager of a business with staff who are rewarded with tips</label>
         </div>
 
         <div class="option">
-            <input type="checkbox" id="role3">
+            <input type="checkbox" id="role3" @bind="Role3">
             <label for="role3">I am a customer who rewards good service with tips</label>
         </div>
     </div>
 
+    <!-- Error Message -->
+    @if (!isRoleSelected)
+    {
+        <p class="error-message">Please select at least one role.</p>
+    }
+
     <!-- Register Button -->
-    <button class="save-button" @onclick="HandleSave">Save</button>
+    <button class="save-button" @onclick="HandleSave" disabled="@(!isRoleSelected)">Save</button>
 </div>
 
-@code{
+@code {
+    private bool Role1 { get; set; } = false;
+    private bool Role2 { get; set; } = false;
+    private bool Role3 { get; set; } = false;
+
+    private bool isRoleSelected => Role1 || Role2 || Role3;
+
     private void HandleSave()
     {
-        // Login logic here
+        if (!isRoleSelected)
+        {
+            return; // Do not proceed if no role is selected.
+        }
+
+        // Save logic or navigation
         NavManager.NavigateTo("/WaitStaffProfile");
     }
 }

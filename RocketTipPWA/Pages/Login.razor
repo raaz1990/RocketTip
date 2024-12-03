@@ -1,7 +1,11 @@
 ﻿@page "/"
 @inject NavigationManager NavManager
 
-
+<style>
+.error-message {
+    color:red;
+}
+</style>
 <div class="login-container">
     <h1>Welcome Back!</h1>
 
@@ -12,20 +16,29 @@
         </span>
         <input type="text" placeholder="Username or Email" @bind="Username" />
     </div>
+    @if (!string.IsNullOrEmpty(UsernameError))
+    {
+        <p class="error-message">@UsernameError</p>
+    }
 
     <!-- Password Input -->
     <div class="input-group">
         <span class="input-icon">
             <img src="images/password.png" width="20px" alt="Lock Icon" />
         </span>
-        <input type="password" placeholder="Password" @bind="Password" />
+        <input placeholder="Password" @bind="Password" type="@PasswordInputType" />
         <span class="input-icon-right">
-            <img src="images/hide.png" width="25px"  alt="Eye Icon" @onclick="TogglePasswordVisibility" />
+            <img src="images/hide.png" width="25px" alt="Eye Icon" @onclick="TogglePasswordVisibility" />
         </span>
     </div>
+    @if (!string.IsNullOrEmpty(PasswordError))
+    {
+        <p class="error-message">@PasswordError</p>
+    }
 
     <!-- Forgot Password Link -->
-    <p class="forgot-password "><a href="ForgotPasswordPage">Forgot Password?</a></p>
+    <p class="forgot-password"><a href="ForgotPasswordPage">Forgot Password?</a></p>
+
     <!-- Login Button -->
     <button class="login-button" @onclick="HandleLogin">Login</button>
 
@@ -46,34 +59,54 @@
     </div>
 
     <!-- Sign Up Link -->
-
     <p class="signup-link">Create An Account <a href="/Register">Sign Up</a></p>
 </div>
 
 @code {
-
     private string Username { get; set; } = string.Empty;
     private string Password { get; set; } = string.Empty;
     private bool IsPasswordVisible { get; set; } = false;
+    private string UsernameError { get; set; } = string.Empty;
+    private string PasswordError { get; set; } = string.Empty;
+    private string PasswordInputType => IsPasswordVisible ? "text" : "password";
 
     private void HandleLogin()
     {
+        // Reset errors
+        UsernameError = string.Empty;
+        PasswordError = string.Empty;
 
-        // Login logic here
+        bool isValid = true;
 
-        NavManager.NavigateTo("NewAccountPage");
-    }
-    private void HandleSignup()
-    {
-        // Login logic here
-        NavManager.NavigateTo("Register");
-    }
-    private void Forgot()
-    {
+        // Validate Username (Email format)
+        if (string.IsNullOrEmpty(Username))
+        {
+            UsernameError = "Username or Email is required.";
+            isValid = false;
+        }
+        else if (!IsValidEmail(Username))
+        {
+            UsernameError = "Please enter a valid email.";
+            isValid = false;
+        }
 
-        // Login logic here
+        // Validate Password
+        if (string.IsNullOrEmpty(Password))
+        {
+            PasswordError = "Password is required.";
+            isValid = false;
+        }
+        else if (Password.Length < 6)
+        {
+            PasswordError = "Password must be at least 6 characters long.";
+            isValid = false;
+        }
 
-        NavManager.NavigateTo("ForgotPasswordPage");
+        // If validation passes, navigate to the next page
+        if (isValid)
+        {
+            NavManager.NavigateTo("NewAccountPage");
+        }
     }
 
     private void TogglePasswordVisibility()
@@ -81,4 +114,16 @@
         IsPasswordVisible = !IsPasswordVisible;
     }
 
+    private bool IsValidEmail(string email)
+    {
+        try
+        {
+            var mailAddress = new System.Net.Mail.MailAddress(email);
+            return mailAddress.Address == email;
+        }
+        catch
+        {
+            return false;
+        }
+    }
 }

@@ -1,4 +1,7 @@
 ﻿@page "/paytip"
+@inject NavigationManager NavManager
+<PageTitle>PayTipPage</PageTitle>
+
 <style>
     .paytip-page {
         padding: 20px;
@@ -50,8 +53,29 @@
         margin: 0 10px;
     }
 
+    .error-message {
+        color: red;
+        font-size: 14px;
+        margin-top: 10px;
+    }
+
+    .pay-button {
+        background-color: #F83758;
+        color: white;
+        font-weight: bold;
+        border: none;
+        border-radius: 5px;
+        height: 50px;
+        width: 100%;
+        cursor: pointer;
+        margin-top: 20px;
+    }
+
+        .pay-button:disabled {
+            background-color: #d3d3d3;
+            cursor: not-allowed;
+        }
 </style>
-<PageTitle>PayTipPage</PageTitle>
 
 <main class="paytip-page">
     <div class="content">
@@ -67,9 +91,15 @@
                 <label class="tip-text">(including fee)</label>
             </div>
             <div class="tip-input">
-                <input type="number" class="tip-amount" placeholder="Enter tip Amount" />
+                <input type="number" class="tip-amount" placeholder="Enter tip Amount" @bind="tipAmount" />
             </div>
         </div>
+
+        <!-- Error Message for Invalid Tip Amount -->
+        @if (!isValidAmount)
+        {
+            <p class="error-message">Please enter a valid tip amount greater than 0.</p>
+        }
 
         <!-- Custom Tip Section -->
         <div class="payment-icons text-center">
@@ -81,6 +111,9 @@
             <img src="images/card_1.png" alt="Card 1" class="card-icon" />
             <img src="images/card_2.png" alt="Card 2" class="card-icon" />
         </div>
+
+        <!-- Pay Button -->
+        <button class="pay-button" @onclick="HandlePayment" disabled="@(!isValidAmount)">Pay</button>
     </div>
 
     <!-- Bottom Tab Bar -->
@@ -88,5 +121,16 @@
 </main>
 
 @code {
-    // Add any necessary C# code or logic here if needed for interaction
+    private decimal tipAmount { get; set; }
+    private bool isValidAmount => tipAmount > 0;
+
+    private void HandlePayment()
+    {
+        if (isValidAmount)
+        {
+            // Proceed with payment logic or navigation
+            // For example: Navigate to payment confirmation page
+            NavManager.NavigateTo("/paymentConfirmation");
+        }
+    }
 }

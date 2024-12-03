@@ -126,7 +126,7 @@ code {
         padding: 12px 40px;
         font-size: 16px;
         border: 1px solid #ddd;
-        border-radius: 8px;
+        border-radius: 8px !important;
         background-color: #f9f9f9;
     }
 
@@ -206,3 +206,13 @@ code {
     max-width: 40%;
     margin: auto;
 }*/
+
+.errorstyl{
+    padding-inline-start: 0px !important;
+    list-style: none;
+}
+
+.error-message {
+    color:red !important;
+}
+
