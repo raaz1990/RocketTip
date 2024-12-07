@@ -59,4 +59,8 @@
     <UpToDateCheckInput Remove="Pages\QrScannerPage.razor" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\RocketTip.Business\RocketTip.Business.csproj" />
+  </ItemGroup>
+
 </Project>
