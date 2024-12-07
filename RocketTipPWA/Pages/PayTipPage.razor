@@ -9,6 +9,7 @@
 
     .header {
         margin-bottom: 30px;
+        text-align: center;
     }
 
     .logo {
@@ -51,36 +52,52 @@
     .payment-icon, .card-icon {
         height: 80px;
         margin: 0 10px;
-    }
-
-    .error-message {
-        color: red;
-        font-size: 14px;
-        margin-top: 10px;
-    }
-
-    .pay-button {
-        background-color: #F83758;
-        color: white;
-        font-weight: bold;
-        border: none;
-        border-radius: 5px;
-        height: 50px;
-        width: 100%;
         cursor: pointer;
-        margin-top: 20px;
     }
 
-        .pay-button:disabled {
-            background-color: #d3d3d3;
-            cursor: not-allowed;
+    .popup-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+    }
+
+    .popup-content {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+        .popup-content h3 {
+            margin-bottom: 20px;
         }
+
+        .popup-content button {
+            padding: 10px 20px;
+            background-color: #F83758;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+            .popup-content button:hover {
+                background-color: #d32f46;
+            }
 </style>
 
 <main class="paytip-page">
     <div class="content">
         <!-- Header -->
-        <div class="header text-center">
+        <div class="header">
             <img src="images/rockettipslogowithroce.png" alt="Rocket Tips Logo" class="logo" />
         </div>
 
@@ -91,46 +108,68 @@
                 <label class="tip-text">(including fee)</label>
             </div>
             <div class="tip-input">
-                <input type="number" class="tip-amount" placeholder="Enter tip Amount" @bind="tipAmount" />
+                <input type="number" class="tip-amount" placeholder="Enter tip Amount" @bind="TipAmount" />
             </div>
         </div>
 
         <!-- Error Message for Invalid Tip Amount -->
-        @if (!isValidAmount)
+        @if (!IsValidAmount)
         {
-            <p class="error-message">Please enter a valid tip amount greater than 0.</p>
+            <p class="error-message" style="color: red;">Please enter a valid tip amount greater than 0.</p>
         }
 
-        <!-- Custom Tip Section -->
-        <div class="payment-icons text-center">
-            <img src="images/ipay_icon.png" alt="iPay" class="payment-icon" />
-            <img src="images/gpay_icon.png" alt="Google Pay" class="payment-icon" />
+        <!-- Payment Methods -->
+        <div class="payment-icons">
+            <img src="images/ipay_icon.png" alt="iPay" class="payment-icon" @onclick="() => ShowIpayPopup()" />
+            <img src="images/gpay_icon.png" alt="Google Pay" class="payment-icon" @onclick="() => ShowGpayPopup()" />
         </div>
 
-        <div class="card-icons text-center">
+        <div class="card-icons">
             <img src="images/card_1.png" alt="Card 1" class="card-icon" />
             <img src="images/card_2.png" alt="Card 2" class="card-icon" />
         </div>
-
-        <!-- Pay Button -->
-        <button class="pay-button" @onclick="HandlePayment" disabled="@(!isValidAmount)">Pay</button>
     </div>
 
-    <!-- Bottom Tab Bar -->
-    <BottomTabBar />
+    <!-- Popup Section -->
+    @if (IsPopupVisible)
+    {
+        <div class="popup-overlay">
+            <div class="popup-content">
+                <img src="images/rockettipslogowithroce.png"/>
+@* 
+                <h3>Payment Method: @SelectedPaymentMethod</h3> *@
+               @*  <p>You selected @SelectedPaymentMethod for payment. Confirm your action!</p>
+            *@ <p>
+                    Your Tip Payment Was
+                    Successful
+                </p>
+                <button @onclick="ClosePopup">Close</button>
+            </div>
+        </div>
+    }
 </main>
 
 @code {
-    private decimal tipAmount { get; set; }
-    private bool isValidAmount => tipAmount > 0;
+    private decimal TipAmount { get; set; } = 0;
+    private string SelectedPaymentMethod { get; set; } = string.Empty;
+    private bool IsPopupVisible { get; set; } = false;
 
-    private void HandlePayment()
+    private bool IsValidAmount => TipAmount > 0;
+
+    private void ShowIpayPopup()
     {
-        if (isValidAmount)
-        {
-            // Proceed with payment logic or navigation
-            // For example: Navigate to payment confirmation page
-            NavManager.NavigateTo("/paymentConfirmation");
-        }
+        SelectedPaymentMethod = "iPay";
+        IsPopupVisible = true;
+    }
+
+    private void ShowGpayPopup()
+    {
+        SelectedPaymentMethod = "Google Pay";
+        IsPopupVisible = true;
+    }
+
+    private void ClosePopup()
+    {
+        IsPopupVisible = false;
     }
 }
